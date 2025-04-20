@@ -24,54 +24,61 @@ import {
 export default function CourseSelector() {
   const courses = useCourseStore((state) => state.courses);
   const courseId = useSelectedCourseStore((state) => state.courseId);
+  const courseName = useSelectedCourseStore((state) => state.courseName);
   const setCourseId = useSelectedCourseStore((state) => state.setCourseId);
+  const setCourseName = useSelectedCourseStore((state) => state.setCourseName);
 
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <Button
-          variant="outline"
-          role="combobox"
-          aria-expanded={open}
-          className="w-[200px] justify-between"
-        >
-          {value
-            ? courses.find((course) => course.name === value)?.name
-            : "Valitse kurssi..."}
-          <ChevronsUpDown className="opacity-50" />
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
-        <Command>
-          <CommandInput placeholder="Etsi kursseja..." className="h-9" />
-          <CommandList>
-            <CommandEmpty>Kursseja ei löytynyt.</CommandEmpty>
-            <CommandGroup>
-              {courses.map((course) => (
-                <CommandItem
-                  key={course.name}
-                  onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue);
-                    setCourseId(courseId === course.id ? -1 : course.id);
-                    setOpen(false);
-                  }}
-                >
-                  {course.name}
-                  <Check
-                    className={cn(
-                      "ml-auto",
-                      value === course.name ? "opacity-100" : "opacity-0"
-                    )}
-                  />
-                </CommandItem>
-              ))}
-            </CommandGroup>
-          </CommandList>
-        </Command>
-      </PopoverContent>
-    </Popover>
+    <div>
+      <Popover open={open} onOpenChange={setOpen}>
+        <PopoverTrigger asChild>
+          <Button
+            variant="outline"
+            role="combobox"
+            aria-expanded={open}
+            className="w-[200px] justify-between"
+          >
+            {value
+              ? courses.find((course) => course.name === value)?.name
+              : "Valitse kurssi..."}
+            <ChevronsUpDown className="opacity-50" />
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent className="w-[200px] p-0">
+          <Command>
+            <CommandInput placeholder="Etsi kursseja..." className="h-9" />
+            <CommandList>
+              <CommandEmpty>Kursseja ei löytynyt.</CommandEmpty>
+              <CommandGroup>
+                {courses.map((course) => (
+                  <CommandItem
+                    key={course.name}
+                    onSelect={(currentValue) => {
+                      setValue(currentValue === value ? "" : currentValue);
+                      setCourseName(
+                        courseName === course.name ? "" : course.name
+                      );
+                      setCourseId(courseId === course.id ? -1 : course.id);
+                      setOpen(false);
+                    }}
+                  >
+                    {course.name}
+                    <Check
+                      className={cn(
+                        "ml-auto",
+                        value === course.name ? "opacity-100" : "opacity-0"
+                      )}
+                    />
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            </CommandList>
+          </Command>
+        </PopoverContent>
+      </Popover>
+    </div>
   );
 }
