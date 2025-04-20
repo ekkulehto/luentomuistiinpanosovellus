@@ -13,8 +13,9 @@ export default function NoteRow() {
   const currentNotes = useNoteStore((state) => state.notes);
   const courseId = useSelectedCourseStore((state) => state.courseId);
 
+  // jos courseId on -1 niin näytetään kaikki
   const filteredNotes =
-    courseId === ""
+    courseId === -1
       ? currentNotes
       : currentNotes.filter((note) => note.course.id === courseId);
 
@@ -30,7 +31,7 @@ export default function NoteRow() {
                 <CardTitle>
                   {note.course.name} (id {note.course.id})
                 </CardTitle>
-                <CardDescription>{note.timestamp}</CardDescription>
+                <CardDescription>{note.timestamp.toString()}</CardDescription>
               </CardHeader>
               <CardContent>
                 <p>{note.text}</p>

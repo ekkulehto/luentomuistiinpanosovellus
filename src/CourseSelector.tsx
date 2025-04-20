@@ -53,10 +53,9 @@ export default function CourseSelector() {
               {courses.map((course) => (
                 <CommandItem
                   key={course.name}
-                  value={course.id}
                   onSelect={(currentValue) => {
                     setValue(currentValue === value ? "" : currentValue);
-                    setCourseId(courseId === course.id ? "" : course.id);
+                    setCourseId(courseId === course.id ? -1 : course.id);
                     setOpen(false);
                   }}
                 >

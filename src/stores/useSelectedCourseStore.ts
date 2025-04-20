@@ -1,12 +1,12 @@
 import {create} from "zustand";
 
 interface SelectedCourseState {
-    courseId: string;
-    setCourseId: (id: string) => void;
+    courseId: number;
+    setCourseId: (id: number) => void;
 }
 
 const useSelectedCourseStore = create<SelectedCourseState>((set) => ({
-    courseId: "",
+    courseId: -1,
     setCourseId: (id) => set({courseId:id}),
 }))
 
