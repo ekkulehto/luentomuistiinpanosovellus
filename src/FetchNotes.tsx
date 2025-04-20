@@ -2,7 +2,7 @@ import useSWR from "swr"
 import axios from "axios"
 import Note from "./types/Note"
 
-function FetchNotes() {
+export default function FetchNotes() {
     const fetcher = (url: string) => axios.get(url).then(res => res.data)
 
     const {data: notes, error, isLoading} = useSWR<Note[]>("https://luentomuistiinpano-api.netlify.app/.netlify/functions/notes", fetcher)
@@ -23,8 +23,5 @@ function FetchNotes() {
                 </div>
             )}
         </div>
-
     )
 }
-
-export default FetchNotes

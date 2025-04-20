@@ -1,10 +1,8 @@
 import Course from "./Course";
 
-interface Note {
+export default interface Note {
     id: number;
     text: string;
     course: Course;
     timestamp: string;
 }
-
-export default Note

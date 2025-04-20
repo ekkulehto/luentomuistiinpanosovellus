@@ -2,7 +2,7 @@ import useSWR from "swr"
 import axios from "axios"
 import Course from "./types/Course"
 
-function FetchCourses() {
+export default function FetchCourses() {
     const fetcher = (url: string) => axios.get(url).then(res => res.data)
 
     const {data: courses, error, isLoading} = useSWR<Course[]>("https://luentomuistiinpano-api.netlify.app/.netlify/functions/courses", fetcher)
@@ -18,8 +18,5 @@ function FetchCourses() {
                 </div>
             )}
         </div>
-
     )
 }
-
-export default FetchCourses

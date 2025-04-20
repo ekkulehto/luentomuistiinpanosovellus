@@ -1,7 +1,7 @@
 import FetchCourses from './FetchCourses'
 import FetchNotes from './FetchNotes'
 
-function App() {
+export default function App() {
 
   return (
     <div>
@@ -11,5 +11,3 @@ function App() {
     </div>
   )
 }
-
-export default App
