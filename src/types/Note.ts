@@ -1,7 +1,7 @@
 import Course from "./Course";
 
 export default interface Note {
-    id: number;
+    id: string;
     text: string;
     course: Course;
     timestamp: string;
