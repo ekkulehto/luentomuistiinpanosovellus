@@ -1,17 +1,25 @@
 import FetchCourses from './FetchCourses'
 import FetchNotes from './FetchNotes'
+import { useCourseStore } from './stores/useCourseStore'
 import { useNoteStore } from './stores/useNoteStore'
 
 export default function App() {
   FetchNotes()
+  FetchCourses()
   const currentNotes = useNoteStore((state) => state.notes)
+  const currentCourses = useCourseStore((state) => state.courses)
 
   return (
     <div>
-      <FetchCourses/>
+      {currentCourses.length > 0 && (
+        currentCourses?.map((course) =>
+        <div key={course.id}>
+          <p>{course.id} {course.name}</p>
+        </div>
+      ))}
 
       <p>---------------------------------------------</p>
-      
+
       {currentNotes.length > 0 && (
         currentNotes?.map((note) =>
         <div key={note.id}>
