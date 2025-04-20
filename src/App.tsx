@@ -1,6 +1,6 @@
 import FetchCourses from "./FetchCourses";
 import FetchNotes from "./FetchNotes";
-import Noteslist from "./NotesList";
+import Noteslist from "./NoteList";
 // import { useCourseStore } from './stores/useCourseStore'
 
 export default function App() {
