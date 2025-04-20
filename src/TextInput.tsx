@@ -3,6 +3,16 @@ import { Button } from "./components/ui/button";
 import { ChangeEvent, useState } from "react";
 import { useNoteStore } from "./stores/useNoteStore";
 import { useSelectedCourseStore } from "./stores/useSelectedCourseStore";
+import Note from "./types/Note";
+
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { useSessionNoteStore } from "./stores/useSessionNoteStore";
 
 export default function TextInput() {
   const [text, setText] = useState("");
@@ -10,20 +20,20 @@ export default function TextInput() {
   const notes = useNoteStore((state) => state.notes);
   const courseId = useSelectedCourseStore((state) => state.courseId);
   const courseName = useSelectedCourseStore((state) => state.courseName);
+  const sessionNotes = useSessionNoteStore((state) => state.sessionNotes);
+  const addSessionNote = useSessionNoteStore((state) => state.addSessionNote);
 
   const handleClick = () => {
-    addNote({
+    const addedNote: Note = {
       id: notes.length + 1,
       text: text,
       course: { id: courseId, name: courseName },
       timestamp: new Date(),
-    });
-    console.log({
-      id: notes.length,
-      text: text,
-      course: { id: courseId, name: courseName },
-      timestamp: new Date(),
-    });
+    };
+
+    addNote(addedNote);
+    addSessionNote(addedNote);
+    setText("");
   };
 
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -40,9 +50,28 @@ export default function TextInput() {
           placeholder="Kirjoita muistiinpanosi tähän."
         />
       </div>
-      <div className="flex flex-row space-x-5">
+      <div className="flex flex-row space-x-5 mb-10">
         <Button onClick={handleClick}>Lisää muistiinpano</Button>
         <Button variant="destructive">Peruuta</Button>
+      </div>
+      <div>
+        {sessionNotes.map((note) => (
+          <div className="mb-5" key={note.id}>
+            <Card>
+              <CardHeader>
+                <CardTitle>
+                  {note.course.name} (id {note.course.id})
+                </CardTitle>
+                <CardDescription>
+                  {note.timestamp.toLocaleString()}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>{note.text}</p>
+              </CardContent>
+            </Card>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -31,7 +31,9 @@ export default function NoteRow() {
                 <CardTitle>
                   {note.course.name} (id {note.course.id})
                 </CardTitle>
-                <CardDescription>{note.timestamp.toString()}</CardDescription>
+                <CardDescription>
+                  {note.timestamp.toLocaleString()}
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <p>{note.text}</p>

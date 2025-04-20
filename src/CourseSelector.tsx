@@ -20,6 +20,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { useSessionNoteStore } from "./stores/useSessionNoteStore";
 
 export default function CourseSelector() {
   const courses = useCourseStore((state) => state.courses);
@@ -27,6 +28,7 @@ export default function CourseSelector() {
   const courseName = useSelectedCourseStore((state) => state.courseName);
   const setCourseId = useSelectedCourseStore((state) => state.setCourseId);
   const setCourseName = useSelectedCourseStore((state) => state.setCourseName);
+  const setSessionNotes = useSessionNoteStore((state) => state.setSessionNotes);
 
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
@@ -62,6 +64,7 @@ export default function CourseSelector() {
                         courseName === course.name ? "" : course.name
                       );
                       setCourseId(courseId === course.id ? -1 : course.id);
+                      setSessionNotes([]);
                       setOpen(false);
                     }}
                   >
