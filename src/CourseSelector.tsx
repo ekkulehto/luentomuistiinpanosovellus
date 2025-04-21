@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 import { useCourseStore } from "./stores/useCourseStore";
-import { useSelectedCourseStore } from "./stores/useSelectedCourseStore";
 
 import {
   Command,
@@ -20,18 +19,26 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { useSessionNoteStore } from "./stores/useSessionNoteStore";
+
+import { useNavigate } from "react-router";
+import { useParams } from "react-router";
 
 export default function CourseSelector() {
   const courses = useCourseStore((state) => state.courses);
-  const courseId = useSelectedCourseStore((state) => state.courseId);
-  const courseName = useSelectedCourseStore((state) => state.courseName);
-  const setCourseId = useSelectedCourseStore((state) => state.setCourseId);
-  const setCourseName = useSelectedCourseStore((state) => state.setCourseName);
-  const setSessionNotes = useSessionNoteStore((state) => state.setSessionNotes);
 
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
+
+  const navigate = useNavigate();
+  const { courseId } = useParams();
+
+  function toggleCourse(id: number) {
+    if (id.toString() === courseId) {
+      navigate("/notelist");
+    } else {
+      navigate(`/notelist/${id}`);
+    }
+  }
 
   return (
     <div>
@@ -57,24 +64,21 @@ export default function CourseSelector() {
               <CommandGroup>
                 {courses.map((course) => (
                   <CommandItem
-                    key={course.name}
+                    key={course.id}
+                    value={course.name}
                     onSelect={(currentValue) => {
                       setValue(currentValue === value ? "" : currentValue);
-                      setCourseName(
-                        courseName === course.name ? "" : course.name
-                      );
-                      setCourseId(courseId === course.id ? -1 : course.id);
-                      setSessionNotes([]);
+                      toggleCourse(course.id);
                       setOpen(false);
                     }}
                   >
-                    {course.name}
                     <Check
                       className={cn(
-                        "ml-auto",
+                        "mr-2 h-4 w-4",
                         value === course.name ? "opacity-100" : "opacity-0"
                       )}
                     />
+                    {course.name}
                   </CommandItem>
                 ))}
               </CommandGroup>

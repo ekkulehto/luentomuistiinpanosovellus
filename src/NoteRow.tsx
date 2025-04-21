@@ -1,5 +1,4 @@
 import { useNoteStore } from "./stores/useNoteStore";
-import { useSelectedCourseStore } from "./stores/useSelectedCourseStore";
 
 import {
   Card,
@@ -9,15 +8,17 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-export default function NoteRow() {
-  const currentNotes = useNoteStore((state) => state.notes);
-  const courseId = useSelectedCourseStore((state) => state.courseId);
+import { useParams } from "react-router";
 
-  // jos courseId on -1 niin näytetään kaikki
+export default function NoteRow() {
+  const notes = useNoteStore((state) => state.notes);
+  const { courseId } = useParams();
+
+  // jos courseId on undefined niin näytetään kaikki muistiinpanot
   const filteredNotes =
-    courseId === -1
-      ? currentNotes
-      : currentNotes.filter((note) => note.course.id === courseId);
+    courseId === undefined
+      ? notes
+      : notes.filter((note) => note.course.id.toString() === courseId);
 
   return (
     <div>

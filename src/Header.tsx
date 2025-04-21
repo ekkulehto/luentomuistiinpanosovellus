@@ -1,7 +1,6 @@
 import {
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 
@@ -14,34 +13,28 @@ export default function Header() {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <Link to="/">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Etusivu
-              </NavigationMenuLink>
+            <Link to={"/"}>
+              <p className={navigationMenuTriggerStyle()}>Etusivu</p>
             </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link to="/notelist">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Muistiinpanot
-              </NavigationMenuLink>
+            <Link to={"/notelist"}>
+              <p className={navigationMenuTriggerStyle()}>Muistiinpanot</p>
             </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link to="/addnewnote">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <Link to={"/addnewnote"}>
+              <p className={navigationMenuTriggerStyle()}>
                 Lisää uusi muistiinpano
-              </NavigationMenuLink>
+              </p>
             </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link to="/addnewcourse">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Lisää uusi kurssi
-              </NavigationMenuLink>
+            <Link to={"/addnewcourse"}>
+              <p className={navigationMenuTriggerStyle()}>Lisää uusi kurssi</p>
             </Link>
           </NavigationMenuItem>
         </NavigationMenuList>
