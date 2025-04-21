@@ -5,6 +5,9 @@ import Notelist from "./NoteList";
 import Home from "./Home";
 import Header from "./Header";
 import AddNewNote from "./AddNewNote";
+import CourseList from "./CourseList";
+import AddNewCourse from "./AddNewCourse";
+import { Toaster } from "./components/ui/sonner";
 
 export default function App() {
   FetchNotes();
@@ -22,10 +25,9 @@ export default function App() {
             <Route path=":courseId/addnewnote" element={<AddNewNote />} />
           </Route>
 
-          <Route path="courses">
-            {/* <Route index element={<CourseList />} />
-            <Route path=":courseId" element={<CourseList />} />
-            <Route path=":courseId/addnewnote" element={<AddNewCourse />} /> */}
+          <Route path="courselist">
+            <Route index element={<CourseList />} />
+            <Route path="addnewcourse" element={<AddNewCourse />} />
           </Route>
         </Route>
       </Routes>
@@ -36,6 +38,7 @@ export default function App() {
 function AppLayout() {
   return (
     <div className="max-w-4xl mx-auto">
+      <Toaster />
       <Header />
       <Outlet />
     </div>

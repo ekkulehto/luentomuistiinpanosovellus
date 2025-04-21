@@ -7,7 +7,7 @@ import RenderCourseNotes from "./RenderCourseNotes";
 import { useNoteStore } from "./stores/useNoteStore";
 import Note from "./types/Note";
 
-export default function TextInput() {
+export default function NewNoteInput() {
   const [text, setText] = useState("");
   const [searchParams] = useSearchParams();
   const addNote = useNoteStore((state) => state.addNote);
@@ -18,20 +18,20 @@ export default function TextInput() {
   const [sessionNotes, setSessionNotes] = useState<Note[]>([]);
 
   const handleClick = () => {
-    const addedNote: Note = {
-      id: notes.length + 1,
+    const newNote: Note = {
+      id: notes.length,
       text: text,
       course: { id: Number(courseId), name: courseName },
       timestamp: new Date(),
     };
 
-    addNote(addedNote);
-    setSessionNotes((state) => [...state, addedNote]);
+    addNote(newNote);
+    setSessionNotes((state) => [...state, newNote]);
     setText("");
   };
 
-  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setText(e.target.value);
+  const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    setText(event.target.value);
   };
 
   return (

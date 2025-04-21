@@ -25,7 +25,7 @@ export default function Header() {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link to={"/courses"}>
+            <Link to={"/courselist"}>
               <p className={navigationMenuTriggerStyle()}>Kurssit</p>
             </Link>
           </NavigationMenuItem>

@@ -1,4 +1,4 @@
-import TextInput from "./TextInput";
+import NewNoteInput from "./NewNoteInput";
 import { useSearchParams } from "react-router";
 
 export default function AddNewNote() {
@@ -14,7 +14,7 @@ export default function AddNewNote() {
         <div>Valittu kurssi: {courseName}</div>
       </div>
       <div>
-        <TextInput />
+        <NewNoteInput />
       </div>
     </div>
   );
