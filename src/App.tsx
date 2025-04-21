@@ -19,11 +19,13 @@ export default function App() {
           <Route path="notelist">
             <Route index element={<Notelist />} />
             <Route path=":courseId" element={<Notelist />} />
+            <Route path=":courseId/addnewnote" element={<AddNewNote />} />
           </Route>
 
-          <Route path=":courseId">
-            <Route index element={<AddNewNote />} />
-            <Route path="addnewnote" element={<AddNewNote />} />
+          <Route path="courses">
+            {/* <Route index element={<CourseList />} />
+            <Route path=":courseId" element={<CourseList />} />
+            <Route path=":courseId/addnewnote" element={<AddNewCourse />} /> */}
           </Route>
         </Route>
       </Routes>

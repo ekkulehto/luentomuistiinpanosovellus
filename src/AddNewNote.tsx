@@ -1,9 +1,9 @@
-import CourseSelector from "./CourseSelector";
 import TextInput from "./TextInput";
-import { useParams } from "react-router";
+import { useSearchParams } from "react-router";
 
 export default function AddNewNote() {
-  const courseId = useParams();
+  const [searchParams] = useSearchParams();
+  const courseName = searchParams.get("name") ?? "";
 
   return (
     <div>
@@ -11,16 +11,11 @@ export default function AddNewNote() {
         Lisää uusi muistiinpano
       </h1>
       <div className="mb-5">
-        <CourseSelector />
+        <div>Valittu kurssi: {courseName}</div>
       </div>
       <div>
-        {courseId === undefined ? (
-          <div>Valitse kurssi jolle haluat lisätä uuden muistiinpanon.</div>
-        ) : (
-          <TextInput />
-        )}
+        <TextInput />
       </div>
-      <div></div>
     </div>
   );
 }

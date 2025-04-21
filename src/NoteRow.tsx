@@ -1,12 +1,5 @@
 import { useNoteStore } from "./stores/useNoteStore";
-
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import RenderCourseNotes from "./RenderCourseNotes";
 
 import { useParams } from "react-router";
 
@@ -25,23 +18,7 @@ export default function NoteRow() {
       {filteredNotes.length === 0 ? (
         <div>Ei tuloksia</div>
       ) : (
-        filteredNotes.map((note) => (
-          <div className="mb-5" key={note.id}>
-            <Card>
-              <CardHeader>
-                <CardTitle>
-                  {note.course.name} (id {note.course.id})
-                </CardTitle>
-                <CardDescription>
-                  {note.timestamp.toLocaleString()}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>{note.text}</p>
-              </CardContent>
-            </Card>
-          </div>
-        ))
+        RenderCourseNotes(filteredNotes)
       )}
     </div>
   );

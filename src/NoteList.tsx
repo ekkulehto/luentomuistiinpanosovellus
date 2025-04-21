@@ -1,12 +1,15 @@
 import { Button } from "@/components/ui/button";
 import CourseSelector from "./CourseSelector";
 import NoteRow from "./Noterow";
-import { useParams } from "react-router";
 import { Link } from "react-router";
+import { useLocation, useParams } from "react-router";
 
 export default function Notelist() {
   // jos courseId on undefined, niin ei anneta mahdollisuutta lisätä muistiinpanoa
   const { courseId } = useParams<{ courseId?: string }>();
+
+  // tämän avulla otetaan kurssin nimi mukaan
+  const location = useLocation();
 
   return (
     <div>
@@ -18,7 +21,9 @@ export default function Notelist() {
           <p>Valitse kurssi lisätäksesi uusi muistiinpano</p>
         ) : (
           <Button>
-            <Link to={"addnewnote"}>Lisää uusi muistiinpano</Link>
+            <Link to={`/notelist/${courseId}/addnewnote${location.search}`}>
+              Lisää uusi muistiinpano
+            </Link>
           </Button>
         )}
       </div>

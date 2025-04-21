@@ -21,14 +21,11 @@ import {
 
 import { useNavigate } from "react-router";
 import { useParams } from "react-router";
-// import { useSearchParams } from "react-router";
 
 export default function CourseSelector() {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
   const { courseId } = useParams();
-  // const [searchParams] = useSearchParams();
-  // const courseName = searchParams.get("name") ?? "";
   const navigate = useNavigate();
 
   const courses = useCourseStore((state) => state.courses);
