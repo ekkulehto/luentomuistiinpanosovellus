@@ -24,7 +24,7 @@ export default function Header() {
             </Link>
           </NavigationMenuItem>
 
-          <NavigationMenuItem>
+          {/* <NavigationMenuItem>
             <Link to={"/addnewnote"}>
               <p className={navigationMenuTriggerStyle()}>
                 Lisää uusi muistiinpano
@@ -36,7 +36,7 @@ export default function Header() {
             <Link to={"/addnewcourse"}>
               <p className={navigationMenuTriggerStyle()}>Lisää uusi kurssi</p>
             </Link>
-          </NavigationMenuItem>
+          </NavigationMenuItem> */}
         </NavigationMenuList>
       </NavigationMenu>
     </div>

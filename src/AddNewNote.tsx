@@ -1,19 +1,20 @@
 import CourseSelector from "./CourseSelector";
-import { useSelectedCourseStore } from "./stores/useSelectedCourseStore";
 import TextInput from "./TextInput";
+import { useParams } from "react-router";
 
 export default function AddNewNote() {
-  const courseId = useSelectedCourseStore((state) => state.courseId);
+  const courseId = useParams();
 
   return (
     <div>
       <h1 className="text-4xl font-bold mb-8 text-center">
         Lisää uusi muistiinpano
       </h1>
-      <div className="flex flex-col space-y-10">
+      <div className="mb-5">
         <CourseSelector />
-
-        {courseId === -1 ? (
+      </div>
+      <div>
+        {courseId === undefined ? (
           <div>Valitse kurssi jolle haluat lisätä uuden muistiinpanon.</div>
         ) : (
           <TextInput />

@@ -2,7 +2,6 @@ import * as React from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-
 import { useCourseStore } from "./stores/useCourseStore";
 
 import {
@@ -22,21 +21,23 @@ import {
 
 import { useNavigate } from "react-router";
 import { useParams } from "react-router";
+// import { useSearchParams } from "react-router";
 
 export default function CourseSelector() {
-  const courses = useCourseStore((state) => state.courses);
-
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
-
-  const navigate = useNavigate();
   const { courseId } = useParams();
+  // const [searchParams] = useSearchParams();
+  // const courseName = searchParams.get("name") ?? "";
+  const navigate = useNavigate();
 
-  function toggleCourse(id: number) {
+  const courses = useCourseStore((state) => state.courses);
+
+  function toggleCourse(id: number, name: string) {
     if (id.toString() === courseId) {
       navigate("/notelist");
     } else {
-      navigate(`/notelist/${id}`);
+      navigate(`/notelist/${id}?name=${encodeURIComponent(name)}`);
     }
   }
 
@@ -68,7 +69,7 @@ export default function CourseSelector() {
                     value={course.name}
                     onSelect={(currentValue) => {
                       setValue(currentValue === value ? "" : currentValue);
-                      toggleCourse(course.id);
+                      toggleCourse(course.id, course.name);
                       setOpen(false);
                     }}
                   >

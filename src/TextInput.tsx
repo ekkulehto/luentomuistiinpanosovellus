@@ -2,7 +2,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "./components/ui/button";
 import { ChangeEvent, useState } from "react";
 import { useNoteStore } from "./stores/useNoteStore";
-import { useSelectedCourseStore } from "./stores/useSelectedCourseStore";
 import Note from "./types/Note";
 
 import {
@@ -14,12 +13,15 @@ import {
 } from "@/components/ui/card";
 import { useSessionNoteStore } from "./stores/useSessionNoteStore";
 
+import { useParams, useSearchParams } from "react-router";
+
 export default function TextInput() {
   const [text, setText] = useState("");
+  const [searchParams] = useSearchParams();
   const addNote = useNoteStore((state) => state.addNote);
   const notes = useNoteStore((state) => state.notes);
-  const courseId = useSelectedCourseStore((state) => state.courseId);
-  const courseName = useSelectedCourseStore((state) => state.courseName);
+  const courseId = useParams();
+  const courseName = searchParams.get("name") ?? "";
   const sessionNotes = useSessionNoteStore((state) => state.sessionNotes);
   const addSessionNote = useSessionNoteStore((state) => state.addSessionNote);
 
@@ -27,7 +29,7 @@ export default function TextInput() {
     const addedNote: Note = {
       id: notes.length + 1,
       text: text,
-      course: { id: courseId, name: courseName },
+      course: { id: Number(courseId), name: courseName },
       timestamp: new Date(),
     };
 
