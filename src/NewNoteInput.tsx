@@ -50,7 +50,7 @@ export default function NewNoteInput() {
           Peruuta
         </Button>
       </div>
-      <div>{RenderCourseNotes(sessionNotes)}</div>
+      <div>{RenderCourseNotes(sessionNotes, true)}</div>
     </div>
   );
 }
