@@ -21,6 +21,7 @@ export default function NewCourseInput() {
   const [text, setText] = useState("");
   const courses = useCourseStore((state) => state.courses);
   const addCourse = useCourseStore((state) => state.addCourse);
+  const deleteCourse = useCourseStore((state) => state.deleteCourse);
 
   const handleClick = () => {
     const newCourse: Course = {
@@ -28,12 +29,12 @@ export default function NewCourseInput() {
       name: text,
     };
 
-    toast(`${text} lisätty kursseihin`, {
+    toast(`Opintojakso ${text} (id:${courses.length}) lisätty `, {
       description: `${new Date().toLocaleString()}`,
       id: courses.length,
       action: {
-        label: "Undo",
-        onClick: () => console.log("Undo"),
+        label: "Peruuta",
+        onClick: () => deleteCourse(courses.length),
       },
     });
 

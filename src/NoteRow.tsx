@@ -18,7 +18,7 @@ export default function NoteRow() {
       {filteredNotes.length === 0 ? (
         <div>Ei muistiinpanoja!</div>
       ) : (
-        RenderCourseNotes(filteredNotes, false)
+        <RenderCourseNotes notes={filteredNotes} onlyText={false} />
       )}
     </div>
   );
