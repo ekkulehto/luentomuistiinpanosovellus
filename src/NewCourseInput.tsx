@@ -24,22 +24,28 @@ export default function NewCourseInput() {
   const deleteCourse = useCourseStore((state) => state.deleteCourse);
 
   const handleClick = () => {
-    const newCourse: Course = {
-      id: courses.length,
-      name: text,
-    };
+    if (text.length) {
+      const newCourse: Course = {
+        id: courses.length,
+        name: text,
+      };
 
-    toast(`Opintojakso ${text} (id:${courses.length}) lisätty `, {
-      description: `${new Date().toLocaleString()}`,
-      id: courses.length,
-      action: {
-        label: "Peruuta",
-        onClick: () => deleteCourse(courses.length),
-      },
-    });
+      toast(`Opintojakso ${text} (id:${courses.length}) lisätty `, {
+        description: `${new Date().toLocaleString()}`,
+        id: courses.length,
+        action: {
+          label: "Peruuta",
+          onClick: () => deleteCourse(courses.length),
+        },
+      });
 
-    addCourse(newCourse);
-    setText("");
+      addCourse(newCourse);
+      setText("");
+    } else {
+      toast(`Virhe!`, {
+        description: "Et voi tallentaa kurssia ilman nimeä.",
+      });
+    }
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {

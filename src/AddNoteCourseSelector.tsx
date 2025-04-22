@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/popover";
 
 import { useNavigate, useParams, useSearchParams } from "react-router";
+import { useDropdownMenuStore } from "./stores/useDropdownMenuStore";
 
 export default function AddNoteCourseSelector() {
   const [open, setOpen] = React.useState(false);
@@ -27,6 +28,7 @@ export default function AddNoteCourseSelector() {
   const [searchParams] = useSearchParams();
   const { courseId } = useParams();
   const navigate = useNavigate();
+  const dropdownMenuState = useDropdownMenuStore((state) => state.isLocked);
 
   const courses = useCourseStore((state) => state.courses);
 
@@ -62,7 +64,7 @@ export default function AddNoteCourseSelector() {
             role="combobox"
             aria-expanded={open}
             className="w-[200px] justify-between"
-            // disabled={true}
+            disabled={dropdownMenuState}
           >
             {value || "Valitse kurssi..."}
             <ChevronsUpDown className="opacity-50" />
