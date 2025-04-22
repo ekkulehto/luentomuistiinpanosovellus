@@ -45,7 +45,6 @@ export default function CourseRow() {
                 </div>
                 <AlertDialog>
                   <AlertDialogTrigger>
-                    {" "}
                     <Button variant="destructive" size="icon">
                       <X />
                     </Button>
