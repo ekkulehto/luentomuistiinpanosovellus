@@ -8,7 +8,7 @@ import { useNoteStore } from "./stores/useNoteStore";
 import Note from "./types/Note";
 import { useDropdownMenuStore } from "./stores/useDropdownMenuStore";
 import { toast } from "sonner";
-import { GetNextFreeNoteId } from "./lib/getNextFreeNoteId";
+import { GetNextFreeId } from "./lib/getNextFreeId";
 
 export default function NewNoteInput() {
   const [sessionNotes, setSessionNotes] = useState<Note[]>([]);
@@ -36,7 +36,7 @@ export default function NewNoteInput() {
   }, [setDropdownMenuLocked]);
 
   const handleClick = () => {
-    const id = GetNextFreeNoteId(notes);
+    const id = GetNextFreeId(notes);
 
     if (text.length > 0) {
       const newNote: Note = {

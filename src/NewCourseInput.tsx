@@ -15,7 +15,7 @@ import Course from "./types/Course";
 
 import { useNavigate } from "react-router";
 import { toast } from "sonner";
-import { GetNextFreeCourseId } from "./lib/getNextFreeCourseId";
+import { GetNextFreeId } from "./lib/getNextFreeId";
 
 export default function NewCourseInput() {
   const [text, setText] = useState("");
@@ -25,7 +25,7 @@ export default function NewCourseInput() {
   const deleteCourse = useCourseStore((state) => state.deleteCourse);
 
   const handleClick = () => {
-    const id = GetNextFreeCourseId(courses);
+    const id = GetNextFreeId(courses);
 
     if (text.length) {
       const newCourse: Course = {
