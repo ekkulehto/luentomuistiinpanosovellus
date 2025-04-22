@@ -7,7 +7,7 @@ export default function NoteRow() {
   const notes = useNoteStore((state) => state.notes);
   const { courseId } = useParams();
 
-  // jos courseId on undefined niin näytetään kaikki muistiinpanot
+  // jos courseId on undefined niin näytetään kaikki muistiinpanot muuten filtteröidään
   const filteredNotes =
     courseId === undefined
       ? notes

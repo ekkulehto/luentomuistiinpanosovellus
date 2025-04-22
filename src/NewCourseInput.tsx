@@ -79,7 +79,7 @@ export default function NewCourseInput() {
       <CardFooter className="flex justify-between">
         <Button onClick={handleClick}>Lisää</Button>
         <Button onClick={() => navigate(-1)} variant="destructive">
-          Peruuta
+          Takaisin
         </Button>
       </CardFooter>
     </Card>
