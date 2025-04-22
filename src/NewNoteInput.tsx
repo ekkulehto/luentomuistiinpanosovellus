@@ -9,12 +9,14 @@ import Note from "./types/Note";
 import { useDropdownMenuStore } from "./stores/useDropdownMenuStore";
 import { toast } from "sonner";
 import { GetNextFreeId } from "./lib/getNextFreeId";
+import { useCourseStore } from "./stores/useCourseStore";
 
 export default function NewNoteInput() {
   const [sessionNotes, setSessionNotes] = useState<Note[]>([]);
   const [text, setText] = useState("");
   const [searchParams] = useSearchParams();
   const { courseId } = useParams<{ courseId: string }>();
+  const courses = useCourseStore((state) => state.courses);
   const courseName = searchParams.get("name") ?? "";
   const notes = useNoteStore((state) => state.notes);
   const addNote = useNoteStore((state) => state.addNote);
@@ -23,12 +25,20 @@ export default function NewNoteInput() {
     (state) => state.setIsLocked
   );
 
-  const disableNewNote = courseId === "undefined" ? true : false;
+  const checkIfValidCourse = () => {
+    const id = !courseId ? false : Number(courseId);
 
-  const notelistOrCourseNotes =
-    courseId === "undefined"
-      ? "/notelist"
-      : `/notelist/${courseId}?name=${encodeURIComponent(courseName)}`;
+    return courses.some(
+      (course) => course.id === id && course.name === courseName
+    );
+  };
+
+  // deaktivoidaan tekstikenttä ja tallenna painike
+  const disableNewNote = !checkIfValidCourse();
+
+  const navigateToNotelistOrCourseNotes = !checkIfValidCourse()
+    ? "/notelist"
+    : `/notelist/${courseId}?name=${encodeURIComponent(courseName)}`;
 
   // komponentin latautuessa asetetaan dropdownmenu näkyviin
   useEffect(() => {
@@ -38,7 +48,7 @@ export default function NewNoteInput() {
   const handleClick = () => {
     const id = GetNextFreeId(notes);
 
-    if (text.length > 0) {
+    if (text.length) {
       const newNote: Note = {
         id: id,
         text: text,
@@ -77,7 +87,7 @@ export default function NewNoteInput() {
           Tallenna
         </Button>
         <Button
-          onClick={() => navigate(notelistOrCourseNotes)}
+          onClick={() => navigate(navigateToNotelistOrCourseNotes)}
           variant="destructive"
         >
           Takaisin

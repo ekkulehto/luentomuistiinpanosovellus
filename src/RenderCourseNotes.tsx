@@ -10,6 +10,7 @@ import {
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNoteStore } from "./stores/useNoteStore";
+import { toast } from "sonner";
 
 interface RenderCourseNotes {
   notes: Note[];
@@ -21,6 +22,20 @@ export default function RenderCourseNotes({
   onlyText = false,
 }: RenderCourseNotes) {
   const deleteNote = useNoteStore((state) => state.deleteNote);
+  const addNote = useNoteStore((state) => state.addNote);
+
+  const deleteNoteAndUndo = (note: Note) => {
+    deleteNote(note.id);
+
+    toast(`Muistiinpano poistettu`, {
+      description:
+        note.text.length > 50 ? `${note.text.slice(0, 40)}...` : note.text,
+      action: {
+        label: "Palauta",
+        onClick: () => addNote(note),
+      },
+    });
+  };
 
   return (
     <>
@@ -49,7 +64,7 @@ export default function RenderCourseNotes({
                         </CardDescription>
                       </div>
                       <Button
-                        onClick={() => deleteNote(note.id)}
+                        onClick={() => deleteNoteAndUndo(note)}
                         variant="destructive"
                         size="icon"
                       >

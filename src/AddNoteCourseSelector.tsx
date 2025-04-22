@@ -48,11 +48,11 @@ export default function AddNoteCourseSelector() {
   }, [courseId, courses, searchParams]);
 
   // react-routerin reititys
-  function toggleCourse(id: number, name: string) {
+  const toggleCourse = (id: number, name: string) => {
     if (id.toString() !== courseId) {
       navigate(`/notelist/${id}/addnewnote?name=${encodeURIComponent(name)}`);
     }
-  }
+  };
 
   return (
     <div>

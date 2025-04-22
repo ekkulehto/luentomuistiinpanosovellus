@@ -45,13 +45,13 @@ export default function NoteListCourseSelector() {
   }, [courseId, courses, searchParams]);
 
   // react-routerin reititys
-  function toggleCourse(id: number, name: string) {
+  const toggleCourse = (id: number, name: string) => {
     if (id.toString() === courseId) {
       navigate("/notelist");
     } else {
       navigate(`/notelist/${id}?name=${encodeURIComponent(name)}`);
     }
-  }
+  };
 
   return (
     <div>
