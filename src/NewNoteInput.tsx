@@ -10,14 +10,14 @@ import { useDropdownMenuStore } from "./stores/useDropdownMenuStore";
 import { toast } from "sonner";
 
 export default function NewNoteInput() {
+  const [sessionNotes, setSessionNotes] = useState<Note[]>([]);
   const [text, setText] = useState("");
   const [searchParams] = useSearchParams();
-  const addNote = useNoteStore((state) => state.addNote);
-  const notes = useNoteStore((state) => state.notes);
   const { courseId } = useParams<{ courseId: string }>();
   const courseName = searchParams.get("name") ?? "";
+  const notes = useNoteStore((state) => state.notes);
+  const addNote = useNoteStore((state) => state.addNote);
   const navigate = useNavigate();
-  const [sessionNotes, setSessionNotes] = useState<Note[]>([]);
   const setDropdownMenuLocked = useDropdownMenuStore(
     (state) => state.setIsLocked
   );
@@ -35,7 +35,6 @@ export default function NewNoteInput() {
   }, [setDropdownMenuLocked]);
 
   const handleClick = () => {
-    console.log(courseId);
     if (text.length > 0) {
       const newNote: Note = {
         id: notes.length,

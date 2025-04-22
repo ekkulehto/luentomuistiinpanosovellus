@@ -2,6 +2,7 @@ import * as React from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { useNavigate, useParams, useSearchParams } from "react-router";
 import { useCourseStore } from "./stores/useCourseStore";
 
 import {
@@ -19,16 +20,13 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-import { useNavigate, useParams, useSearchParams } from "react-router";
-
 export default function NoteListCourseSelector() {
-  const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
   const [searchParams] = useSearchParams();
+  const [value, setValue] = React.useState("");
+  const [open, setOpen] = React.useState(false);
   const { courseId } = useParams();
-  const navigate = useNavigate();
-
   const courses = useCourseStore((state) => state.courses);
+  const navigate = useNavigate();
 
   // apufunktio jotta sivun päivityksessä dropdown-valikko toimii
   React.useEffect(() => {

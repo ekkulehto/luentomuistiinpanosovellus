@@ -44,11 +44,13 @@ export default function CourseRow() {
                   </span>
                 </div>
                 <AlertDialog>
-                  <AlertDialogTrigger>
+                  {/* as child estää sisäkkäiset buttonit */}
+                  <AlertDialogTrigger asChild>
                     <Button variant="destructive" size="icon">
                       <X />
                     </Button>
                   </AlertDialogTrigger>
+
                   <AlertDialogContent>
                     <AlertDialogHeader>
                       <AlertDialogTitle>Oletko aivan varma?</AlertDialogTitle>
@@ -58,12 +60,17 @@ export default function CourseRow() {
                         lopullisesti.
                       </AlertDialogDescription>
                     </AlertDialogHeader>
+
                     <AlertDialogFooter>
                       <AlertDialogCancel>Peruuta</AlertDialogCancel>
+                      {/* as child estää sisäkkäiset buttonit täälläkin */}
                       <AlertDialogAction
+                        asChild
                         onClick={() => deleteCourseAndNotes(course.id)}
                       >
-                        Jatka
+                        <Button className="text-white" variant="destructive">
+                          Jatka
+                        </Button>
                       </AlertDialogAction>
                     </AlertDialogFooter>
                   </AlertDialogContent>

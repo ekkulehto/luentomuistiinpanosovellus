@@ -1,11 +1,10 @@
 import { useNoteStore } from "./stores/useNoteStore";
+import { useParams } from "react-router";
 import RenderCourseNotes from "./RenderCourseNotes";
 
-import { useParams } from "react-router";
-
 export default function NoteRow() {
-  const notes = useNoteStore((state) => state.notes);
   const { courseId } = useParams();
+  const notes = useNoteStore((state) => state.notes);
 
   // jos courseId on undefined niin näytetään kaikki muistiinpanot muuten filtteröidään
   const filteredNotes =

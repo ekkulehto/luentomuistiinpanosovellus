@@ -27,10 +27,9 @@ export default function AddNoteCourseSelector() {
   const [value, setValue] = React.useState("");
   const [searchParams] = useSearchParams();
   const { courseId } = useParams();
-  const navigate = useNavigate();
   const dropdownMenuState = useDropdownMenuStore((state) => state.isLocked);
-
   const courses = useCourseStore((state) => state.courses);
+  const navigate = useNavigate();
 
   // apufunktio jotta sivun päivityksessä dropdown-valikko toimii
   React.useEffect(() => {

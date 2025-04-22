@@ -17,9 +17,9 @@ import { useNavigate } from "react-router";
 import { toast } from "sonner";
 
 export default function NewCourseInput() {
-  const navigate = useNavigate();
   const [text, setText] = useState("");
   const courses = useCourseStore((state) => state.courses);
+  const navigate = useNavigate();
   const addCourse = useCourseStore((state) => state.addCourse);
   const deleteCourse = useCourseStore((state) => state.deleteCourse);
 
