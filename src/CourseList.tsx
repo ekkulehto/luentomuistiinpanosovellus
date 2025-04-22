@@ -9,9 +9,9 @@ export default function CourseList() {
       <div className="flex flex-row mb-5 justify-between">
         <div>Kaikki kurssit</div>
 
-        <Button>
-          <Link to={"/courselist/addnewcourse"}>Lisää uusi kurssi</Link>
-        </Button>
+        <Link to={"/courselist/addnewcourse"}>
+          <Button>Lisää uusi kurssi</Button>
+        </Link>
       </div>
       <div>
         <CourseRow />

@@ -20,11 +20,9 @@ export default function Notelist() {
         {!courseId ? (
           <p>Valitse kurssi lisätäksesi uusi muistiinpano</p>
         ) : (
-          <Button>
-            <Link to={`/notelist/${courseId}/addnewnote${location.search}`}>
-              Lisää uusi muistiinpano
-            </Link>
-          </Button>
+          <Link to={`/notelist/${courseId}/addnewnote${location.search}`}>
+            <Button>Lisää uusi muistiinpano</Button>
+          </Link>
         )}
       </div>
       <div>
