@@ -19,19 +19,43 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-import { useNavigate } from "react-router";
-import { useParams } from "react-router";
+import {
+  useNavigate,
+  useParams,
+  useSearchParams,
+  useLocation,
+} from "react-router";
 
 export default function CourseSelector() {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
   const { courseId } = useParams();
+  const [searchParams] = useSearchParams();
+  const location = useLocation();
   const navigate = useNavigate();
 
   const courses = useCourseStore((state) => state.courses);
 
+  // apufunktio jotta sivun päivityksessä dropdown-valikko toimii
+  React.useEffect(() => {
+    if (courseId) {
+      const id = Number(courseId);
+      const name = searchParams.get("name");
+      if (name) {
+        setValue(decodeURIComponent(name));
+      } else {
+        const course = courses.find((course) => course.id === id);
+        if (course) {
+          setValue(course.name);
+        }
+      }
+    }
+  }, [courseId, courses, searchParams]);
+
+  // react-routerin reititys
   function toggleCourse(id: number, name: string) {
     if (id.toString() === courseId) {
+      console.log(location.pathname);
       navigate("/notelist");
     } else {
       navigate(`/notelist/${id}?name=${encodeURIComponent(name)}`);
@@ -48,9 +72,7 @@ export default function CourseSelector() {
             aria-expanded={open}
             className="w-[200px] justify-between"
           >
-            {value
-              ? courses.find((course) => course.name === value)?.name
-              : "Valitse kurssi..."}
+            {value || "Valitse kurssi..."}
             <ChevronsUpDown className="opacity-50" />
           </Button>
         </PopoverTrigger>
@@ -65,7 +87,9 @@ export default function CourseSelector() {
                     key={course.id}
                     value={course.name}
                     onSelect={(currentValue) => {
-                      setValue(currentValue === value ? "" : currentValue);
+                      const newValue =
+                        currentValue === value ? "" : currentValue;
+                      setValue(newValue);
                       toggleCourse(course.id, course.name);
                       setOpen(false);
                     }}
