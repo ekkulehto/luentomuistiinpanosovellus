@@ -42,7 +42,7 @@ export default function RenderCourseNotes({
                     <div className="flex justify-between">
                       <div className="flex flex-col">
                         <span className="mb-1">
-                          {note.course.name} (id {note.course.id})
+                          {note.course.name} (id:{note.course.id})
                         </span>
                         <CardDescription>
                           {note.timestamp.toLocaleString()}

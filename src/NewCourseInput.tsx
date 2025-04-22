@@ -15,27 +15,29 @@ import Course from "./types/Course";
 
 import { useNavigate } from "react-router";
 import { toast } from "sonner";
+import { GetNextFreeCourseId } from "./lib/getNextFreeCourseId";
 
 export default function NewCourseInput() {
   const [text, setText] = useState("");
   const courses = useCourseStore((state) => state.courses);
-  const navigate = useNavigate();
   const addCourse = useCourseStore((state) => state.addCourse);
+  const navigate = useNavigate();
   const deleteCourse = useCourseStore((state) => state.deleteCourse);
 
   const handleClick = () => {
+    const id = GetNextFreeCourseId(courses);
+
     if (text.length) {
       const newCourse: Course = {
-        id: courses.length,
+        id: id,
         name: text,
       };
 
-      toast(`Opintojakso ${text} (id:${courses.length}) lisätty `, {
+      toast(`Opintojakso ${text} (id:${id}) lisätty `, {
         description: `${new Date().toLocaleString()}`,
-        id: courses.length,
         action: {
           label: "Peruuta",
-          onClick: () => deleteCourse(courses.length),
+          onClick: () => deleteCourse(id),
         },
       });
 
