@@ -19,19 +19,13 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-import {
-  useNavigate,
-  useParams,
-  useSearchParams,
-  useLocation,
-} from "react-router";
+import { useNavigate, useParams, useSearchParams } from "react-router";
 
-export default function CourseSelector() {
+export default function AddNoteCourseSelector() {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
-  const { courseId } = useParams();
   const [searchParams] = useSearchParams();
-  const location = useLocation();
+  const { courseId } = useParams();
   const navigate = useNavigate();
 
   const courses = useCourseStore((state) => state.courses);
@@ -54,11 +48,8 @@ export default function CourseSelector() {
 
   // react-routerin reititys
   function toggleCourse(id: number, name: string) {
-    if (id.toString() === courseId) {
-      console.log(location.pathname);
-      navigate("/notelist");
-    } else {
-      navigate(`/notelist/${id}?name=${encodeURIComponent(name)}`);
+    if (id.toString() !== courseId) {
+      navigate(`/notelist/${id}/addnewnote?name=${encodeURIComponent(name)}`);
     }
   }
 
@@ -71,6 +62,7 @@ export default function CourseSelector() {
             role="combobox"
             aria-expanded={open}
             className="w-[200px] justify-between"
+            // disabled={true}
           >
             {value || "Valitse kurssi..."}
             <ChevronsUpDown className="opacity-50" />
@@ -87,8 +79,7 @@ export default function CourseSelector() {
                     key={course.id}
                     value={course.name}
                     onSelect={(currentValue) => {
-                      const newValue =
-                        currentValue === value ? "" : currentValue;
+                      const newValue = currentValue;
                       setValue(newValue);
                       toggleCourse(course.id, course.name);
                       setOpen(false);

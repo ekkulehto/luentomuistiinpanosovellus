@@ -1,5 +1,5 @@
-import CourseSelector from "./CourseSelector";
 import NewNoteInput from "./NewNoteInput";
+import AddNoteCourseSelector from "./AddNoteCourseSelector";
 
 export default function AddNewNote() {
   return (
@@ -8,7 +8,7 @@ export default function AddNewNote() {
         Lisää uusi muistiinpano
       </h1>
       <div className="mb-5">
-        <CourseSelector />
+        <AddNoteCourseSelector />
       </div>
       <div>
         <NewNoteInput />
