@@ -18,7 +18,7 @@ interface RenderCourseNotes {
 }
 
 export default function RenderCourseNotes({
-  notes,
+  notes: filteredNotes,
   onlyText = false,
 }: RenderCourseNotes) {
   const deleteNote = useNoteStore((state) => state.deleteNote);
@@ -40,7 +40,7 @@ export default function RenderCourseNotes({
   return (
     <>
       {onlyText
-        ? notes.map((note) => (
+        ? filteredNotes.map((note) => (
             <div className="mb-5" key={note.id}>
               <Card>
                 <CardContent className="break-words whitespace-pre-wrap">
@@ -49,7 +49,7 @@ export default function RenderCourseNotes({
               </Card>
             </div>
           ))
-        : notes.map((note) => (
+        : filteredNotes.map((note) => (
             <div className="mb-5" key={note.id}>
               <Card>
                 <CardHeader>
