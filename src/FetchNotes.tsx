@@ -21,7 +21,12 @@ export default function FetchNotes() {
 
   useEffect(() => {
     if (notes) {
-      setNotes(notes);
+      const notesWithDate: Note[] = notes.map((note) => ({
+        ...note,
+        timestamp: new Date(note.timestamp),
+      }));
+      console.group(notesWithDate);
+      setNotes(notesWithDate);
     }
   }, [notes, setNotes]);
 
