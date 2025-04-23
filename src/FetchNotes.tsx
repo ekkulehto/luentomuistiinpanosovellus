@@ -25,7 +25,6 @@ export default function FetchNotes() {
         ...note,
         timestamp: new Date(note.timestamp),
       }));
-      console.group(notesWithDate);
       setNotes(notesWithDate);
     }
   }, [notes, setNotes]);
