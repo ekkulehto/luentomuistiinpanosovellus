@@ -43,7 +43,7 @@ export default function RenderCourseNotes({
         ? notes.map((note) => (
             <div className="mb-5" key={note.id}>
               <Card>
-                <CardContent>
+                <CardContent className="break-words whitespace-pre-wrap">
                   <p>{note.text}</p>
                 </CardContent>
               </Card>
