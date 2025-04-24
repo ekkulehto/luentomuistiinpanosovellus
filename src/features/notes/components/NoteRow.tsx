@@ -1,7 +1,7 @@
-import { useNoteStore } from "./stores/useNoteStore";
+import { useNoteStore } from "../stores/useNoteStore";
 import { useParams } from "react-router";
 import RenderCourseNotes from "./RenderCourseNotes";
-import Note from "./types/Note";
+import Note from "../types/Note";
 
 export default function NoteRow() {
   const { courseId } = useParams();

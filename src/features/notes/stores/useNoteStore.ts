@@ -1,5 +1,5 @@
 import {create} from "zustand";
-import Note from "@/types/Note";
+import Note from "../types/Note";
 
 interface NoteState {
     notes: Note[];

@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import axios from "axios";
-import Note from "./types/Note";
-import { useNoteStore } from "./stores/useNoteStore";
+import Note from "../types/Note";
+import { useNoteStore } from "../stores/useNoteStore";
 import { useEffect } from "react";
 
 const fetcher = (url: string) => axios.get(url).then((res) => res.data);

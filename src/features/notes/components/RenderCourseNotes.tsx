@@ -1,4 +1,4 @@
-import Note from "@/types/Note";
+import Note from "../types/Note";
 import {
   Card,
   CardHeader,
@@ -9,7 +9,7 @@ import {
 
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useNoteStore } from "./stores/useNoteStore";
+import { useNoteStore } from "../stores/useNoteStore";
 import { toast } from "sonner";
 
 interface RenderCourseNotes {

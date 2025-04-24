@@ -9,13 +9,13 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useCourseStore } from "./stores/useCourseStore";
+import { useCourseStore } from "../stores/useCourseStore";
 import { ChangeEvent, useState } from "react";
-import Course from "./types/Course";
+import Course from "../types/Course";
 
 import { useNavigate } from "react-router";
 import { toast } from "sonner";
-import { GetNextFreeId } from "./lib/getNextFreeId";
+import { GetNextFreeId } from "@/utils/getNextFreeId";
 
 export default function NewCourseInput() {
   const [text, setText] = useState("");

@@ -1,7 +1,7 @@
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useCourseStore } from "./stores/useCourseStore";
+import { useCourseStore } from "../stores/useCourseStore";
 
 import {
   AlertDialog,
@@ -14,7 +14,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { useNoteStore } from "./stores/useNoteStore";
+import { useNoteStore } from "@/features/notes/stores/useNoteStore";
 
 export default function CourseRow() {
   const notes = useNoteStore((state) => state.notes);

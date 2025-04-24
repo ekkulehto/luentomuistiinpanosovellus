@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router";
-import CourseRow from "./CourseRow";
+import CourseRow from "@/features/courses/components/CourseRow";
 
 export default function CourseList() {
   return (

@@ -2,7 +2,8 @@ import * as React from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { useCourseStore } from "./stores/useCourseStore";
+import { useNavigate, useParams, useSearchParams } from "react-router";
+import { useCourseStore } from "@/features/courses/stores/useCourseStore";
 
 import {
   Command,
@@ -19,15 +20,11 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-import { useNavigate, useParams, useSearchParams } from "react-router";
-import { useDropdownMenuStore } from "./stores/useDropdownMenuStore";
-
-export default function AddNoteCourseSelector() {
-  const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
+export default function NoteListCourseSelector() {
   const [searchParams] = useSearchParams();
+  const [value, setValue] = React.useState("");
+  const [open, setOpen] = React.useState(false);
   const { courseId } = useParams();
-  const dropdownMenuState = useDropdownMenuStore((state) => state.isLocked);
   const courses = useCourseStore((state) => state.courses);
   const navigate = useNavigate();
 
@@ -49,8 +46,10 @@ export default function AddNoteCourseSelector() {
 
   // react-routerin reititys
   const toggleCourse = (id: number, name: string) => {
-    if (id.toString() !== courseId) {
-      navigate(`/notelist/${id}/addnewnote?name=${encodeURIComponent(name)}`);
+    if (id.toString() === courseId) {
+      navigate("/notelist");
+    } else {
+      navigate(`/notelist/${id}?name=${encodeURIComponent(name)}`);
     }
   };
 
@@ -63,7 +62,7 @@ export default function AddNoteCourseSelector() {
             role="combobox"
             aria-expanded={open}
             className="w-[200px] justify-between"
-            disabled={dropdownMenuState}
+            // disabled={true}
           >
             {value || "Valitse kurssi..."}
             <ChevronsUpDown className="opacity-50" />
@@ -80,7 +79,8 @@ export default function AddNoteCourseSelector() {
                     key={course.id}
                     value={course.name}
                     onSelect={(currentValue) => {
-                      const newValue = currentValue;
+                      const newValue =
+                        currentValue === value ? "" : currentValue;
                       setValue(newValue);
                       toggleCourse(course.id, course.name);
                       setOpen(false);

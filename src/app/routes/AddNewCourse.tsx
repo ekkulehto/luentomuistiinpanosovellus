@@ -1,4 +1,4 @@
-import NewCourseInput from "./NewCourseInput";
+import NewCourseInput from "@/features/courses/components/NewCourseInput";
 
 export default function AddNewCourse() {
   return (

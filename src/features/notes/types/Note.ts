@@ -1,4 +1,4 @@
-import Course from "./Course";
+import Course from "@/features/courses/types/Course";
 
 export default interface Note {
     id: number;

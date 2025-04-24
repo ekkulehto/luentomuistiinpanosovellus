@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
-import NoteRow from "./NoteRow";
+import NoteRow from "@/features/notes/components/NoteRow";
 import { Link } from "react-router";
 import { useParams } from "react-router";
-import NoteListCourseSelector from "./NoteListCourseSelector";
-import { useCourseStore } from "./stores/useCourseStore";
+import NoteListCourseSelector from "@/features/notes/components/NoteListCourseSelector";
+import { useCourseStore } from "@/features/courses/stores/useCourseStore";
 
 export default function Notelist() {
   const { courseId } = useParams();

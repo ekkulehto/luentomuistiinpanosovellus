@@ -1,5 +1,5 @@
-import NewNoteInput from "./NewNoteInput";
-import AddNoteCourseSelector from "./AddNoteCourseSelector";
+import NewNoteInput from "@/features/notes/components/NewNoteInput";
+import AddNoteCourseSelector from "@/features/notes/components/AddNoteCourseSelector";
 import { useParams } from "react-router";
 
 export default function AddNewNote() {

@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import axios from "axios";
-import Course from "./types/Course";
-import { useCourseStore } from "./stores/useCourseStore";
+import Course from "../types/Course";
+import { useCourseStore } from "../stores/useCourseStore";
 import { useEffect } from "react";
 
 const fetcher = (url: string) => axios.get(url).then((res) => res.data);

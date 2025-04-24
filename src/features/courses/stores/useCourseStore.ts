@@ -1,5 +1,5 @@
 import {create} from "zustand";
-import Course from "@/types/Course";
+import Course from "@/features/courses/types/Course";
 
 interface CourseState {
     courses: Course[];

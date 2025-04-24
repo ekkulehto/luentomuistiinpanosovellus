@@ -1,13 +1,13 @@
-import FetchCourses from "./FetchCourses";
-import FetchNotes from "./FetchNotes";
+import FetchCourses from "@/features/courses/api/FetchCourses";
+import FetchNotes from "@/features/notes/api/FetchNotes";
 import { Outlet, Routes, Route } from "react-router";
-import Notelist from "./NoteList";
-import Home from "./Home";
-import Header from "./Header";
-import AddNewNote from "./AddNewNote";
-import CourseList from "./CourseList";
-import AddNewCourse from "./AddNewCourse";
-import { Toaster } from "./components/ui/sonner";
+import Notelist from "./routes/NoteList";
+import Home from "./routes/Home";
+import Header from "./routes/Header";
+import AddNewNote from "./routes/AddNewNote";
+import CourseList from "./routes/CourseList";
+import AddNewCourse from "./routes/AddNewCourse";
+import { Toaster } from "../components/ui/sonner";
 
 export default function App() {
   FetchNotes();

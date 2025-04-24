@@ -1,15 +1,15 @@
 import { useParams, useSearchParams, useNavigate } from "react-router";
 import { Textarea } from "@/components/ui/textarea";
-import { Button } from "./components/ui/button";
+import { Button } from "@/components/ui/button";
 import { ChangeEvent, useEffect, useState } from "react";
 
 import RenderCourseNotes from "./RenderCourseNotes";
-import { useNoteStore } from "./stores/useNoteStore";
-import Note from "./types/Note";
-import { useDropdownMenuStore } from "./stores/useDropdownMenuStore";
+import { useNoteStore } from "../stores/useNoteStore";
+import Note from "../types/Note";
+import { useDropdownMenuStore } from "../stores/useDropdownMenuStore";
 import { toast } from "sonner";
-import { GetNextFreeId } from "./lib/getNextFreeId";
-import { useCourseStore } from "./stores/useCourseStore";
+import { GetNextFreeId } from "@/utils/getNextFreeId";
+import { useCourseStore } from "@/features/courses/stores/useCourseStore";
 
 export default function NewNoteInput() {
   const [sessionNotes, setSessionNotes] = useState<Note[]>([]);

@@ -2,8 +2,7 @@ import * as React from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { useNavigate, useParams, useSearchParams } from "react-router";
-import { useCourseStore } from "./stores/useCourseStore";
+import { useCourseStore } from "@/features/courses/stores/useCourseStore";
 
 import {
   Command,
@@ -20,11 +19,15 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-export default function NoteListCourseSelector() {
-  const [searchParams] = useSearchParams();
-  const [value, setValue] = React.useState("");
+import { useNavigate, useParams, useSearchParams } from "react-router";
+import { useDropdownMenuStore } from "../stores/useDropdownMenuStore";
+
+export default function AddNoteCourseSelector() {
   const [open, setOpen] = React.useState(false);
+  const [value, setValue] = React.useState("");
+  const [searchParams] = useSearchParams();
   const { courseId } = useParams();
+  const dropdownMenuState = useDropdownMenuStore((state) => state.isLocked);
   const courses = useCourseStore((state) => state.courses);
   const navigate = useNavigate();
 
@@ -46,10 +49,8 @@ export default function NoteListCourseSelector() {
 
   // react-routerin reititys
   const toggleCourse = (id: number, name: string) => {
-    if (id.toString() === courseId) {
-      navigate("/notelist");
-    } else {
-      navigate(`/notelist/${id}?name=${encodeURIComponent(name)}`);
+    if (id.toString() !== courseId) {
+      navigate(`/notelist/${id}/addnewnote?name=${encodeURIComponent(name)}`);
     }
   };
 
@@ -62,7 +63,7 @@ export default function NoteListCourseSelector() {
             role="combobox"
             aria-expanded={open}
             className="w-[200px] justify-between"
-            // disabled={true}
+            disabled={dropdownMenuState}
           >
             {value || "Valitse kurssi..."}
             <ChevronsUpDown className="opacity-50" />
@@ -79,8 +80,7 @@ export default function NoteListCourseSelector() {
                     key={course.id}
                     value={course.name}
                     onSelect={(currentValue) => {
-                      const newValue =
-                        currentValue === value ? "" : currentValue;
+                      const newValue = currentValue;
                       setValue(newValue);
                       toggleCourse(course.id, course.name);
                       setOpen(false);
