@@ -46,7 +46,7 @@ export default function Notes() {
         <Alert className="mb-5 rounded-none">
           <NotebookPen className="h-4 w-4" />
           <AlertTitle>
-            Lisää vähintään yksi kurssi kirjoittaaksesi muistiinpanoja.
+            Lisää kursseja kirjoittaaksesi muistiinpanoja.
           </AlertTitle>
         </Alert>
       )}
