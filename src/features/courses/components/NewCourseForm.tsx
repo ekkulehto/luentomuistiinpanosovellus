@@ -20,8 +20,12 @@ export default function NewCourseForm() {
   const [text, setText] = useState("");
   const courses = useCourseStore((state) => state.courses);
   const addCourse = useCourseStore((state) => state.addCourse);
-  const navigate = useNavigate();
   const deleteCourse = useCourseStore((state) => state.deleteCourse);
+  const navigate = useNavigate();
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setText(event.target.value);
+  };
 
   const handleClick = () => {
     if (!text.length) {
@@ -49,10 +53,6 @@ export default function NewCourseForm() {
     });
 
     setText("");
-  };
-
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setText(event.target.value);
   };
 
   return (

@@ -5,6 +5,7 @@ import { useCourseStore } from "@/features/courses/stores/useCourseStore";
 
 export default function CourseList() {
   const courses = useCourseStore((state) => state.courses);
+  courses.sort((a, b) => a.id - b.id);
   return (
     <div>
       <h1 className="text-4xl font-bold mb-8 text-center">Kurssit</h1>
