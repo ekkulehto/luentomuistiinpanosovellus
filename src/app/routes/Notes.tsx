@@ -27,7 +27,7 @@ export default function Notes() {
         {courses.length === 0 ? (
           <p>Lisää vähintään yksi kurssi lisätäksesi muistiinpanoja</p>
         ) : (
-          <Link to={`/notelist/${courseId}/addnewnote${location.search}`}>
+          <Link to={`/notelist/${courseId}/new${location.search}`}>
             <Button>Lisää uusi muistiinpano</Button>
           </Link>
         )}

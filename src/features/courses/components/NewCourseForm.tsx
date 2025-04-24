@@ -14,7 +14,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { useCourseStore } from "../stores/useCourseStore";
 import { GetNextFreeId } from "@/utils/getNextFreeId";
-import Course from "../types/Course";
+import Course from "../../../types/Course";
 
 export default function NewCourseForm() {
   const [text, setText] = useState("");
@@ -44,7 +44,7 @@ export default function NewCourseForm() {
 
     addCourse(newCourse);
 
-    toast(`Opintojakso ${text} (id:${id}) lisätty `, {
+    toast.success(`Opintojakso ${text} (id:${id}) lisätty `, {
       description: `${new Date().toLocaleString()}`,
       action: {
         label: "Peruuta",
@@ -84,7 +84,7 @@ export default function NewCourseForm() {
 
       <CardFooter className="flex justify-between">
         <Button onClick={handleClick}>Lisää</Button>
-        <Button onClick={() => navigate(-1)} variant="destructive">
+        <Button onClick={() => navigate("/courselist")} variant="destructive">
           Takaisin
         </Button>
       </CardFooter>

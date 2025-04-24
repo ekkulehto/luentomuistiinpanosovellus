@@ -8,7 +8,7 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import Course from "@/features/courses/types/Course";
+import Course from "@/types/Course";
 
 type Props = {
   setOpen: (open: boolean) => void;

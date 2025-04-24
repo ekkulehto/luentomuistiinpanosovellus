@@ -5,7 +5,7 @@ import { useCourseDropdownStore } from "../stores/useCourseDropdownStore";
 import { useCourseStore } from "@/features/courses/stores/useCourseStore";
 import { GetNextFreeId } from "@/utils/getNextFreeId";
 import { useNoteStore } from "../stores/useNoteStore";
-import Note from "../types/Note";
+import Note from "../../../types/Note";
 
 export default function useNewNoteForm() {
   const [sessionNotes, setSessionNotes] = useState<Note[]>([]);

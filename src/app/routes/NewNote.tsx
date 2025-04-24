@@ -2,7 +2,7 @@ import NewNoteForm from "@/features/notes/components/NewNoteForm";
 import { useParams } from "react-router";
 import { DropdownMenu } from "@/features/notes/components/CourseDropdown/CourseDropdown";
 
-export default function AddNewNote() {
+export default function NewNote() {
   const { courseId } = useParams();
 
   return (

@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import axios from "axios";
-import Course from "../types/Course";
+import Course from "../../../types/Course";
 import { useCourseStore } from "../stores/useCourseStore";
 import { useEffect } from "react";
 

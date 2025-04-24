@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import axios from "axios";
-import Note from "../types/Note";
+import Note from "../../../types/Note";
 import { useNoteStore } from "../stores/useNoteStore";
 import { useEffect } from "react";
 

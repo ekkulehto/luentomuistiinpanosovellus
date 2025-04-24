@@ -1,7 +1,7 @@
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { useCourseStore } from "../stores/useCourseStore";
 import { useNoteStore } from "@/features/notes/stores/useNoteStore";
-import Course from "../types/Course";
+import Course from "../../../types/Course";
 import DeleteCourseDialog from "./DeleteCourseDialog";
 
 type Props = {
