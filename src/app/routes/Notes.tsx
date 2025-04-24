@@ -43,10 +43,10 @@ export default function Notes() {
         )}
       </div>
       {courses.length === 0 && (
-        <Alert className="mb-5 rounded-none bg-dark border-0">
+        <Alert className="mb-5 rounded-none">
           <NotebookPen className="h-4 w-4" />
           <AlertTitle>
-            Lisää vähintään yksi kurssi lisätäksesi muistiinpanoja.
+            Lisää vähintään yksi kurssi kirjoittaaksesi muistiinpanoja.
           </AlertTitle>
         </Alert>
       )}

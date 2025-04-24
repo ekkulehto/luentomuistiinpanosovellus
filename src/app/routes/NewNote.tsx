@@ -18,7 +18,9 @@ export default function NewNote() {
       {courseId === "undefined" && (
         <Alert className="mb-5 rounded-none">
           <NotebookPen className="h-4 w-4" />
-          <AlertTitle>Valitse kurssi lisätäksesi muistiinpanoja.</AlertTitle>
+          <AlertTitle>
+            Valitse kurssi kirjoittaaksesi muistiinpanoja.
+          </AlertTitle>
         </Alert>
       )}
       <div>
