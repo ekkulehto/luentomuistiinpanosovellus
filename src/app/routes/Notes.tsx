@@ -13,11 +13,10 @@ export default function Notes() {
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const courses = useCourseStore((state) => state.courses);
   const notes = useNoteStore((state) => state.notes);
-  const textClass = !isDesktop ? "text-xs" : undefined;
 
   return (
     <div>
-      <div className="text-4xl font-bold mb-8">
+      <div className="text-4xl font-bold mb-8 text-center">
         {courseId === undefined ? (
           <h1>Kaikki muistiinpanot</h1>
         ) : (
@@ -28,11 +27,7 @@ export default function Notes() {
       <div className="flex flex-row mb-5 justify-between items-center">
         <DropdownMenu isNotelist={true} />
 
-        {courses.length === 0 ? (
-          <p className={textClass}>
-            Lisää vähintään yksi kurssi lisätäksesi muistiinpanoja
-          </p>
-        ) : (
+        {courses.length !== 0 && (
           <Link to={`/notelist/${courseId}/new${location.search}`}>
             {isDesktop ? (
               <Button>Lisää uusi muistiinpano</Button>
@@ -45,6 +40,11 @@ export default function Notes() {
           </Link>
         )}
       </div>
+      {courses.length === 0 && (
+        <div className="mb-5">
+          Lisää vähintään yksi kurssi lisätäksesi muistiinpanoja.
+        </div>
+      )}
       <div>
         <NoteList notes={notes} onlyText={false} />
       </div>

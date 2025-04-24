@@ -4,6 +4,7 @@ import { useNoteStore } from "../stores/useNoteStore";
 import filterNotes from "../utils/filterNotes";
 import NoteRow from "./noteRow/NoteRow";
 import Note from "../../../types/Note";
+import TextNoteCard from "./noteRow/TextNoteCard";
 
 type Props = {
   notes: Note[];
@@ -33,7 +34,7 @@ export default function NoteList({ notes, onlyText }: Props) {
   return (
     <>
       {filteredNotes.length === 0 && !onlyText ? (
-        <div>Ei muistiinpanoja!</div>
+        <TextNoteCard text={"Ei muistiinpanoja!"} />
       ) : (
         filteredNotes.map((note) => (
           <NoteRow
