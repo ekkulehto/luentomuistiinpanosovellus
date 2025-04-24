@@ -1,6 +1,6 @@
 import NewNoteInput from "@/features/notes/components/NewNoteInput";
-import AddNoteCourseSelector from "@/features/notes/components/AddNoteCourseSelector";
 import { useParams } from "react-router";
+import { DropdownMenu } from "@/features/notes/components/DropdownMenu";
 
 export default function AddNewNote() {
   const { courseId } = useParams();
@@ -11,7 +11,7 @@ export default function AddNewNote() {
         Lisää uusi muistiinpano
       </h1>
       <div className="mb-5 flex flex-row justify-between">
-        <AddNoteCourseSelector />
+        <DropdownMenu isNotelist={false} />
         {courseId === "undefined" && (
           <p>Valitse kurssi lisätäksesi uuden muistiinpanon</p>
         )}

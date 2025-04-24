@@ -3,8 +3,8 @@ import { useParams } from "react-router";
 import { Button } from "@/components/ui/button";
 import { useCourseStore } from "@/features/courses/stores/useCourseStore";
 import { useNoteStore } from "@/features/notes/stores/useNoteStore";
-import NoteListCourseSelector from "@/features/notes/components/NoteListCourseSelector";
 import NoteList from "@/features/notes/components/NoteList";
+import { DropdownMenu } from "@/features/notes/components/DropdownMenu";
 
 export default function Notes() {
   const { courseId } = useParams();
@@ -22,7 +22,7 @@ export default function Notes() {
       </div>
 
       <div className="flex flex-row mb-5 justify-between">
-        <NoteListCourseSelector />
+        <DropdownMenu isNotelist={true} />
 
         {courses.length === 0 ? (
           <p>Lisää vähintään yksi kurssi lisätäksesi muistiinpanoja</p>

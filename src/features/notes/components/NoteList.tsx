@@ -2,7 +2,7 @@ import { useParams } from "react-router";
 import { toast } from "sonner";
 import { useNoteStore } from "../stores/useNoteStore";
 import filterNotes from "../utils/filterNotes";
-import NoteRow from "./NoteRow";
+import NoteRow from "./noteRow/NoteRow";
 import Note from "../types/Note";
 
 type Props = {
