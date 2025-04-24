@@ -26,6 +26,7 @@ export function DropdownMenu({ isNotelist }: Props) {
   const Trigger = isDesktop ? PopoverTrigger : DrawerTrigger;
   const Content = isDesktop ? PopoverContent : DrawerContent;
   const contentClass = isDesktop ? "w-[200px] p-0" : "mt-4 border-t";
+  const buttonClass = isDesktop ? "w-[200px] justify-start" : "justify-start";
 
   return (
     // container = PopOver || Drawer
@@ -39,7 +40,7 @@ export function DropdownMenu({ isNotelist }: Props) {
             role="combobox"
             aria-expanded={open}
             disabled={!isNotelist ? dropdownStatus : false}
-            className="w-[200px] justify-start"
+            className={buttonClass}
           >
             {value
               ? courses.find((course) => course.name === value)?.name
