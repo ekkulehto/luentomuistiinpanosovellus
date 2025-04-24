@@ -19,7 +19,6 @@ export default function useFetchCourses() {
     {
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
-      revalidateOnMount: false,
     }
   );
 
