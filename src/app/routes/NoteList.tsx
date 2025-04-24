@@ -4,10 +4,12 @@ import { Link } from "react-router";
 import { useParams } from "react-router";
 import NoteListCourseSelector from "@/features/notes/components/NoteListCourseSelector";
 import { useCourseStore } from "@/features/courses/stores/useCourseStore";
+import { useNoteStore } from "@/features/notes/stores/useNoteStore";
 
 export default function Notelist() {
   const { courseId } = useParams();
   const courses = useCourseStore((state) => state.courses);
+  const notes = useNoteStore((state) => state.notes);
 
   return (
     <div>
@@ -32,7 +34,7 @@ export default function Notelist() {
       </div>
 
       <div>
-        <NoteRow />
+        <NoteRow notes={notes} onlyText={false} />
       </div>
     </div>
   );

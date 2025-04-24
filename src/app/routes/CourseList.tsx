@@ -6,9 +6,11 @@ import { useCourseStore } from "@/features/courses/stores/useCourseStore";
 export default function CourseList() {
   const courses = useCourseStore((state) => state.courses);
   courses.sort((a, b) => a.id - b.id);
+
   return (
     <div>
       <h1 className="text-4xl font-bold mb-8 text-center">Kurssit</h1>
+
       <div className="flex flex-row mb-5 justify-between">
         <div>Kaikki kurssit</div>
 
@@ -16,6 +18,7 @@ export default function CourseList() {
           <Button>Lisää uusi kurssi</Button>
         </Link>
       </div>
+
       <div>
         {courses.length === 0 ? (
           <div>Ei kursseja!</div>

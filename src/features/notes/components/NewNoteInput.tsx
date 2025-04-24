@@ -3,7 +3,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { ChangeEvent, useEffect, useState } from "react";
 
-import RenderCourseNotes from "./RenderCourseNotes";
+import NoteRow from "./NoteRow";
 import { useNoteStore } from "../stores/useNoteStore";
 import Note from "../types/Note";
 import { useDropdownMenuStore } from "../stores/useDropdownMenuStore";
@@ -98,7 +98,7 @@ export default function NewNoteInput() {
           <h2 className="text-2xl text-center">Session muistiinpanot</h2>
         </div>
       )}
-      <RenderCourseNotes notes={sessionNotes} onlyText={true} />
+      <NoteRow notes={sessionNotes} onlyText={true} />
     </div>
   );
 }

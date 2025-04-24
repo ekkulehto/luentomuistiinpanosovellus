@@ -1,13 +1,33 @@
-import { useNoteStore } from "../stores/useNoteStore";
 import { useParams } from "react-router";
-import RenderCourseNotes from "./RenderCourseNotes";
+import { toast } from "sonner";
+import { useNoteStore } from "../stores/useNoteStore";
+import TextNoteCard from "./TextNoteCard";
+import FullNoteCard from "./FullNoteCard";
 import Note from "../types/Note";
 
-export default function NoteRow() {
-  const { courseId } = useParams();
-  const notes = useNoteStore((state) => state.notes);
+type Props = {
+  notes: Note[];
+  onlyText: boolean;
+};
 
-  // jos courseId on undefined niin näytetään kaikki muistiinpanot muuten filtteröidään
+export default function NoteRow({ notes, onlyText }: Props) {
+  const { courseId } = useParams();
+  const deleteNote = useNoteStore((state) => state.deleteNote);
+  const addNote = useNoteStore((state) => state.addNote);
+
+  const handleDeleteAndUndo = (note: Note) => {
+    deleteNote(note.id);
+
+    toast.success(`Muistiinpano poistettu`, {
+      description:
+        note.text.length > 50 ? `${note.text.slice(0, 40)}...` : note.text,
+      action: {
+        label: "Palauta",
+        onClick: () => addNote(note),
+      },
+    });
+  };
+
   const filterNotes = () => {
     let filteredNotes: Note[];
 
@@ -18,7 +38,7 @@ export default function NoteRow() {
         (note) => note.course.id.toString() === courseId
       );
     }
-    // järjestetään ajallisesti uusimmasta vanhimpaan
+
     return filteredNotes.sort(
       (a, b) => b.timestamp.getTime() - a.timestamp.getTime()
     );
@@ -27,12 +47,22 @@ export default function NoteRow() {
   const filteredNotes = filterNotes();
 
   return (
-    <div>
-      {filteredNotes.length === 0 ? (
+    <>
+      {onlyText ? (
+        filteredNotes.map((note) => (
+          <TextNoteCard key={note.id} text={note.text} />
+        ))
+      ) : filteredNotes.length === 0 ? (
         <div>Ei muistiinpanoja!</div>
       ) : (
-        <RenderCourseNotes notes={filteredNotes} onlyText={false} />
+        filteredNotes.map((note) => (
+          <FullNoteCard
+            key={note.id}
+            note={note}
+            onDelete={handleDeleteAndUndo}
+          />
+        ))
       )}
-    </div>
+    </>
   );
 }
