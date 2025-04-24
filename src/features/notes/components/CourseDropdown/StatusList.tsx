@@ -1,5 +1,4 @@
 import { Check } from "lucide-react";
-import { useMediaQuery } from "@custom-react-hooks/use-media-query";
 import { cn } from "@/lib/utils";
 import {
   Command,
@@ -29,10 +28,9 @@ export default function StatusList({
   courses,
   value,
 }: Props) {
-  const isDesktop = useMediaQuery("(min-width: 768px)");
   return (
     <Command>
-      <CommandInput autoFocus={isDesktop} placeholder="Etsi kursseja..." />
+      <CommandInput placeholder="Etsi kursseja..." />
       <CommandList>
         <CommandEmpty>Kursseja ei löytynyt.</CommandEmpty>
         <CommandGroup>

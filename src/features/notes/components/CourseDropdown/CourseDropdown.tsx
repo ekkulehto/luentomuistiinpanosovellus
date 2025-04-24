@@ -39,7 +39,7 @@ export function DropdownMenu({ isNotelist }: Props) {
 
   return (
     // container = PopOver || Drawer
-    <Container autoFocus={true} open={open} onOpenChange={setOpen}>
+    <Container open={open} onOpenChange={setOpen}>
       <div className="flex items-center space-x-4">
         <p className="text-sm text-muted-foreground">Kurssi</p>
         {/* trigger = PopOverTrigger || DrawerTrigger */}
@@ -47,6 +47,7 @@ export function DropdownMenu({ isNotelist }: Props) {
           <Button
             variant="outline"
             role="combobox"
+            autoFocus={true}
             aria-expanded={open}
             disabled={!isNotelist ? dropdownStatus : false}
             className={buttonClass}
