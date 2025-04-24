@@ -8,7 +8,7 @@ export default function Courses() {
   const isDesktop = useMediaQuery("(min-width: 768px)");
   return (
     <div>
-      <h1 className="text-4xl font-bold mb-8 text-center">Kurssit</h1>
+      <h1 className="text-4xl font-bold mb-25 text-center">Kurssit</h1>
 
       <div className="flex flex-row mb-5 justify-between items-center">
         <div>Kaikki kurssit</div>

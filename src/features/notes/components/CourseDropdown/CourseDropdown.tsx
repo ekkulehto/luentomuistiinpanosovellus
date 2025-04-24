@@ -1,6 +1,15 @@
+"use client";
+
 import { useMediaQuery } from "@custom-react-hooks/use-media-query";
 import { Button } from "@/components/ui/button";
-import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerTrigger,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerDescription,
+} from "@/components/ui/drawer";
 import {
   Popover,
   PopoverContent,
@@ -30,7 +39,7 @@ export function DropdownMenu({ isNotelist }: Props) {
 
   return (
     // container = PopOver || Drawer
-    <Container open={open} onOpenChange={setOpen}>
+    <Container autoFocus={true} open={open} onOpenChange={setOpen}>
       <div className="flex items-center space-x-4">
         <p className="text-sm text-muted-foreground">Kurssi</p>
         {/* trigger = PopOverTrigger || DrawerTrigger */}
@@ -52,6 +61,14 @@ export function DropdownMenu({ isNotelist }: Props) {
       </div>
       {/* Content = PopoverContent || DrawerContent */}
       <Content className={contentClass} align={isDesktop ? "start" : undefined}>
+        {!isDesktop && (
+          <DrawerHeader>
+            <DrawerTitle>Kurssivalikko</DrawerTitle>
+            <DrawerDescription>
+              Etsi kursseja tai valitse jokin alla olevista.
+            </DrawerDescription>
+          </DrawerHeader>
+        )}
         <StatusList
           setOpen={setOpen}
           setValue={setValue}

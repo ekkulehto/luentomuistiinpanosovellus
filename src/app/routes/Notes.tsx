@@ -5,6 +5,8 @@ import { useCourseStore } from "@/features/courses/stores/useCourseStore";
 import { useNoteStore } from "@/features/notes/stores/useNoteStore";
 import { DropdownMenu } from "@/features/notes/components/CourseDropdown/CourseDropdown";
 import { useMediaQuery } from "@custom-react-hooks/use-media-query";
+import { Alert, AlertTitle } from "@/components/ui/alert";
+import { NotebookPen } from "lucide-react";
 import { Plus } from "lucide-react";
 import NoteList from "@/features/notes/components/NoteList";
 
@@ -16,7 +18,7 @@ export default function Notes() {
 
   return (
     <div>
-      <div className="text-4xl font-bold mb-8 text-center">
+      <div className="text-4xl font-bold mb-25 text-center">
         {courseId === undefined ? (
           <h1>Kaikki muistiinpanot</h1>
         ) : (
@@ -41,9 +43,12 @@ export default function Notes() {
         )}
       </div>
       {courses.length === 0 && (
-        <div className="mb-5">
-          Lisää vähintään yksi kurssi lisätäksesi muistiinpanoja.
-        </div>
+        <Alert className="mb-5 rounded-none bg-dark border-0">
+          <NotebookPen className="h-4 w-4" />
+          <AlertTitle>
+            Lisää vähintään yksi kurssi lisätäksesi muistiinpanoja.
+          </AlertTitle>
+        </Alert>
       )}
       <div>
         <NoteList notes={notes} onlyText={false} />
