@@ -1,13 +1,12 @@
 import FetchCourses from "@/features/courses/api/FetchCourses";
 import FetchNotes from "@/features/notes/api/FetchNotes";
-import { Outlet, Routes, Route } from "react-router";
+import { Routes, Route } from "react-router";
 import Notelist from "./routes/NoteList";
 import Home from "./routes/Home";
-import Header from "./routes/Header";
 import AddNewNote from "./routes/AddNewNote";
 import CourseList from "./routes/CourseList";
 import AddNewCourse from "./routes/AddNewCourse";
-import { Toaster } from "../components/ui/sonner";
+import { AppLayout } from "./routes/AppLayout";
 
 export default function App() {
   FetchNotes();
@@ -31,16 +30,6 @@ export default function App() {
           </Route>
         </Route>
       </Routes>
-    </div>
-  );
-}
-
-function AppLayout() {
-  return (
-    <div className="max-w-4xl mx-auto">
-      <Toaster />
-      <Header />
-      <Outlet />
     </div>
   );
 }
