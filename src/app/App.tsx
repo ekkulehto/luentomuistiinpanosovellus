@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router";
-import Notelist from "./routes/NoteList";
+import Notes from "./routes/Notes";
 import Home from "./routes/Home";
 import AddNewNote from "./routes/AddNewNote";
 import CourseList from "./routes/CourseList";
@@ -14,8 +14,8 @@ export default function App() {
           <Route index element={<Home />} />
 
           <Route path="notelist">
-            <Route index element={<Notelist />} />
-            <Route path=":courseId" element={<Notelist />} />
+            <Route index element={<Notes />} />
+            <Route path=":courseId" element={<Notes />} />
             <Route path=":courseId/addnewnote" element={<AddNewNote />} />
           </Route>
 

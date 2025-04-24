@@ -1,12 +1,12 @@
-import { Button } from "@/components/ui/button";
-import NoteRow from "@/features/notes/components/NoteRow";
 import { Link } from "react-router";
 import { useParams } from "react-router";
-import NoteListCourseSelector from "@/features/notes/components/NoteListCourseSelector";
+import { Button } from "@/components/ui/button";
 import { useCourseStore } from "@/features/courses/stores/useCourseStore";
 import { useNoteStore } from "@/features/notes/stores/useNoteStore";
+import NoteListCourseSelector from "@/features/notes/components/NoteListCourseSelector";
+import NoteList from "@/features/notes/components/NoteList";
 
-export default function Notelist() {
+export default function Notes() {
   const { courseId } = useParams();
   const courses = useCourseStore((state) => state.courses);
   const notes = useNoteStore((state) => state.notes);
@@ -34,7 +34,7 @@ export default function Notelist() {
       </div>
 
       <div>
-        <NoteRow notes={notes} onlyText={false} />
+        <NoteList notes={notes} onlyText={false} />
       </div>
     </div>
   );

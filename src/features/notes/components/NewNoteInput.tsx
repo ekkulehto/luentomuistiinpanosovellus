@@ -1,15 +1,14 @@
+import { ChangeEvent, useEffect, useState } from "react";
 import { useParams, useSearchParams, useNavigate } from "react-router";
+import { toast } from "sonner";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { ChangeEvent, useEffect, useState } from "react";
-
-import NoteRow from "./NoteRow";
-import { useNoteStore } from "../stores/useNoteStore";
-import Note from "../types/Note";
 import { useDropdownMenuStore } from "../stores/useDropdownMenuStore";
-import { toast } from "sonner";
-import { GetNextFreeId } from "@/utils/getNextFreeId";
 import { useCourseStore } from "@/features/courses/stores/useCourseStore";
+import { GetNextFreeId } from "@/utils/getNextFreeId";
+import { useNoteStore } from "../stores/useNoteStore";
+import NoteList from "./NoteList";
+import Note from "../types/Note";
 
 export default function NewNoteInput() {
   const [sessionNotes, setSessionNotes] = useState<Note[]>([]);
@@ -98,7 +97,7 @@ export default function NewNoteInput() {
           <h2 className="text-2xl text-center">Session muistiinpanot</h2>
         </div>
       )}
-      <NoteRow notes={sessionNotes} onlyText={true} />
+      <NoteList notes={sessionNotes} onlyText={true} />
     </div>
   );
 }
