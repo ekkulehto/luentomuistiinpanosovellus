@@ -1,5 +1,3 @@
-import FetchCourses from "@/features/courses/api/FetchCourses";
-import FetchNotes from "@/features/notes/api/FetchNotes";
 import { Routes, Route } from "react-router";
 import Notelist from "./routes/NoteList";
 import Home from "./routes/Home";
@@ -9,9 +7,6 @@ import AddNewCourse from "./routes/AddNewCourse";
 import { AppLayout } from "./routes/AppLayout";
 
 export default function App() {
-  FetchNotes();
-  FetchCourses();
-
   return (
     <div className="max-w-5xl mx-auto p-8">
       <Routes>

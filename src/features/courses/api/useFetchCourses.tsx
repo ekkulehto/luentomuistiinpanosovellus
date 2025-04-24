@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
-export default function FetchCourses() {
+export default function useFetchCourses() {
   const setCourses = useCourseStore((state) => state.setCourses);
 
   const {
@@ -25,6 +25,5 @@ export default function FetchCourses() {
     }
   }, [courses, setCourses]);
 
-  if (error) return <div>failed to load</div>;
-  if (isLoading) return <div>loading...</div>;
+  return { isLoading, error };
 }
