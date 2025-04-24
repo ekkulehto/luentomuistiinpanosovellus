@@ -1,8 +1,8 @@
 import { Outlet } from "react-router";
-import Header from "./Header";
 import { Toaster } from "@/components/ui/sonner";
 import useFetchCourses from "@/features/courses/api/useFetchCourses";
 import useFetchNotes from "@/features/notes/api/useFetchNotes";
+import Header from "./Header";
 
 export function AppLayout() {
   useFetchCourses();

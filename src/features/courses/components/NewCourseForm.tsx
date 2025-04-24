@@ -1,4 +1,6 @@
-import { Button } from "@/components/ui/button";
+import { ChangeEvent, useState } from "react";
+import { useNavigate } from "react-router";
+import { toast } from "sonner";
 import {
   Card,
   CardContent,
@@ -9,15 +11,12 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 import { useCourseStore } from "../stores/useCourseStore";
-import { ChangeEvent, useState } from "react";
+import { GetNextFreeId } from "@/utils/getNextFreeId";
 import Course from "../types/Course";
 
-import { useNavigate } from "react-router";
-import { toast } from "sonner";
-import { GetNextFreeId } from "@/utils/getNextFreeId";
-
-export default function NewCourseInput() {
+export default function NewCourseForm() {
   const [text, setText] = useState("");
   const courses = useCourseStore((state) => state.courses);
   const addCourse = useCourseStore((state) => state.addCourse);
@@ -25,29 +24,31 @@ export default function NewCourseInput() {
   const deleteCourse = useCourseStore((state) => state.deleteCourse);
 
   const handleClick = () => {
-    const id = GetNextFreeId(courses);
-
-    if (text.length) {
-      const newCourse: Course = {
-        id: id,
-        name: text,
-      };
-
-      toast(`Opintojakso ${text} (id:${id}) lisätty `, {
-        description: `${new Date().toLocaleString()}`,
-        action: {
-          label: "Peruuta",
-          onClick: () => deleteCourse(id),
-        },
-      });
-
-      addCourse(newCourse);
-      setText("");
-    } else {
-      toast(`Virhe!`, {
+    if (!text.length) {
+      toast.error(`Virhe!`, {
         description: "Et voi tallentaa kurssia ilman nimeä.",
       });
+      return;
     }
+
+    const id = GetNextFreeId(courses);
+
+    const newCourse: Course = {
+      id: id,
+      name: text,
+    };
+
+    addCourse(newCourse);
+
+    toast(`Opintojakso ${text} (id:${id}) lisätty `, {
+      description: `${new Date().toLocaleString()}`,
+      action: {
+        label: "Peruuta",
+        onClick: () => deleteCourse(id),
+      },
+    });
+
+    setText("");
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -58,11 +59,13 @@ export default function NewCourseInput() {
     <Card className="w-xl">
       <CardHeader>
         <CardTitle>Uusi kurssi</CardTitle>
+
         <CardDescription>
           Lisää uusi kurssi antamalla sille nimi ja painamalla "Lisää"
           painiketta.
         </CardDescription>
       </CardHeader>
+
       <CardContent>
         <form>
           <div className="grid w-full items-center gap-4">
@@ -78,6 +81,7 @@ export default function NewCourseInput() {
           </div>
         </form>
       </CardContent>
+
       <CardFooter className="flex justify-between">
         <Button onClick={handleClick}>Lisää</Button>
         <Button onClick={() => navigate(-1)} variant="destructive">
