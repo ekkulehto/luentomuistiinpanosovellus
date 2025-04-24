@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useCourseStore } from "@/features/courses/stores/useCourseStore";
 import { useNoteStore } from "@/features/notes/stores/useNoteStore";
 import NoteList from "@/features/notes/components/NoteList";
-import { DropdownMenu } from "@/features/notes/components/DropdownMenu";
+import { DropdownMenu } from "@/features/notes/components/CourseDropdown/CourseDropdown";
 
 export default function Notes() {
   const { courseId } = useParams();

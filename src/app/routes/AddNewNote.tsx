@@ -1,6 +1,6 @@
 import NewNoteInput from "@/features/notes/components/NewNoteInput";
 import { useParams } from "react-router";
-import { DropdownMenu } from "@/features/notes/components/DropdownMenu";
+import { DropdownMenu } from "@/features/notes/components/CourseDropdown/CourseDropdown";
 
 export default function AddNewNote() {
   const { courseId } = useParams();

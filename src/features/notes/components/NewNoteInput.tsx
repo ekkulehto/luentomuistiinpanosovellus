@@ -3,7 +3,7 @@ import { useParams, useSearchParams, useNavigate } from "react-router";
 import { toast } from "sonner";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { useDropdownMenuStore } from "../stores/useDropdownMenuStore";
+import { useCourseDropdownStore } from "../stores/useCourseDropdownStore";
 import { useCourseStore } from "@/features/courses/stores/useCourseStore";
 import { GetNextFreeId } from "@/utils/getNextFreeId";
 import { useNoteStore } from "../stores/useNoteStore";
@@ -20,7 +20,7 @@ export default function NewNoteInput() {
   const notes = useNoteStore((state) => state.notes);
   const addNote = useNoteStore((state) => state.addNote);
   const navigate = useNavigate();
-  const setDropdownMenuLocked = useDropdownMenuStore(
+  const setDropdownMenuLocked = useCourseDropdownStore(
     (state) => state.setIsLocked
   );
 
