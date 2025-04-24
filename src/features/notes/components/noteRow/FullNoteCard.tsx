@@ -39,7 +39,7 @@ export default function FullNoteCard({ note, onDelete }: Props) {
             </div>
           </CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="break-words whitespace-pre-wrap">
           <p>{note.text}</p>
         </CardContent>
       </Card>

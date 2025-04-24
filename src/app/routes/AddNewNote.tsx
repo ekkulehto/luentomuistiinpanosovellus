@@ -1,4 +1,4 @@
-import NewNoteInput from "@/features/notes/components/NewNoteInput";
+import NewNoteForm from "@/features/notes/components/NewNoteForm";
 import { useParams } from "react-router";
 import { DropdownMenu } from "@/features/notes/components/CourseDropdown/CourseDropdown";
 
@@ -17,7 +17,7 @@ export default function AddNewNote() {
         )}
       </div>
       <div>
-        <NewNoteInput />
+        <NewNoteForm />
       </div>
     </div>
   );
