@@ -57,7 +57,7 @@ export default function useNewNoteForm() {
       setDropdownMenuLocked(true);
       setText("");
     } else {
-      toast(`Virhe!`, {
+      toast.error(`Virhe!`, {
         description: "Et voi tallentaa tyhjää muistiinpanoa.",
       });
     }
