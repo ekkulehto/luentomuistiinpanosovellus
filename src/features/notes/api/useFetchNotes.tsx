@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
-export default function FetchNotes() {
+export default function useFetchNotes() {
   const setNotes = useNoteStore((state) => state.setNotes);
 
   const {
@@ -16,7 +16,11 @@ export default function FetchNotes() {
   } = useSWR<Note[]>(
     "https://luentomuistiinpano-api.netlify.app/.netlify/functions/notes",
     fetcher,
-    { revalidateOnFocus: false, revalidateOnReconnect: false }
+    {
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
+      revalidateOnMount: false,
+    }
   );
 
   useEffect(() => {
@@ -29,6 +33,5 @@ export default function FetchNotes() {
     }
   }, [notes, setNotes]);
 
-  if (error) return <div>failed to load</div>;
-  if (isLoading) return <div>loading...</div>;
+  return { error, isLoading };
 }

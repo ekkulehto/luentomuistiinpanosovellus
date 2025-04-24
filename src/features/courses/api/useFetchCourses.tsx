@@ -16,7 +16,11 @@ export default function useFetchCourses() {
   } = useSWR<Course[]>(
     "https://luentomuistiinpano-api.netlify.app/.netlify/functions/courses",
     fetcher,
-    { revalidateOnFocus: false, revalidateOnReconnect: false }
+    {
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
+      revalidateOnMount: false,
+    }
   );
 
   useEffect(() => {
