@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import { useMediaQuery } from "@custom-react-hooks/use-media-query";
 import { cn } from "@/lib/utils";
 import {
   Command,
@@ -9,7 +10,6 @@ import {
   CommandList,
 } from "@/components/ui/command";
 import Course from "@/types/Course";
-
 type Props = {
   setOpen: (open: boolean) => void;
   setValue: React.Dispatch<React.SetStateAction<string>>;
@@ -29,9 +29,10 @@ export default function StatusList({
   courses,
   value,
 }: Props) {
+  const isDesktop = useMediaQuery("(min-width: 768px)");
   return (
     <Command>
-      <CommandInput placeholder="Etsi kursseja..." />
+      <CommandInput autoFocus={isDesktop} placeholder="Etsi kursseja..." />
       <CommandList>
         <CommandEmpty>Kursseja ei löytynyt.</CommandEmpty>
         <CommandGroup>
