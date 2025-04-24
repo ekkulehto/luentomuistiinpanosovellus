@@ -7,6 +7,7 @@ import useFetchNotes from "@/features/notes/api/useFetchNotes";
 export function AppLayout() {
   useFetchCourses();
   useFetchNotes();
+
   return (
     <div className="max-w-4xl mx-auto">
       <Toaster />
