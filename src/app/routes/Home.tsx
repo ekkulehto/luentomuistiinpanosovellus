@@ -10,9 +10,9 @@ export default function Home() {
         <Card>
           <CardContent>
             {" "}
-            <div className="flex flex-row items-center justify-evenly h-70">
+            <div className="flex flex-col items-center justify-evenly h-100">
               <NotebookPen className="h-50 w-50" />
-              <h2 className="text-3xl font-bold text-right">
+              <h2 className="text-2xl font-bold text-right">
                 Luentomuistiinpanosovellus
               </h2>
             </div>
