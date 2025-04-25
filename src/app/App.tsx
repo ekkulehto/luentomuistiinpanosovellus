@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Routes, Route } from "react-router";
 import NewCourseLayout from "./routes/courses/new/Layout";
 import CoursesLayout from "./routes/courses/Layout";
@@ -13,28 +14,37 @@ import Home from "./routes/Home";
 export default function App() {
   return (
     <div className="max-w-5xl mx-auto p-8">
-      <Routes>
-        <Route path="/" element={<AppLayout />}>
-          <Route index element={<Home />} />
+      {/* Tämä reititys ennemmin jatkosuunnitelmia tai jos tarvitsen mallia jatkossa */}
+      <Suspense
+        fallback={
+          <div className="flex items-center justify-center h-screen">
+            <span className="text-2xl font-medium">Ladataan…</span>
+          </div>
+        }
+      >
+        <Routes>
+          <Route path="/" element={<AppLayout />}>
+            <Route index element={<Home />} />
 
-          <Route path="notes" element={<NotesLayout />}>
-            <Route index element={<Notes />} />
-            <Route path=":courseId" element={<Notes />} />
-          </Route>
+            <Route path="notes" element={<NotesLayout />}>
+              <Route index element={<Notes />} />
+              <Route path=":courseId" element={<Notes />} />
+            </Route>
 
-          <Route path="notes/:courseId/new" element={<NewNoteLayout />}>
-            <Route index element={<NewNote />} />
-          </Route>
+            <Route path="notes/:courseId/new" element={<NewNoteLayout />}>
+              <Route index element={<NewNote />} />
+            </Route>
 
-          <Route path="courses" element={<CoursesLayout />}>
-            <Route index element={<Courses />} />
-          </Route>
+            <Route path="courses" element={<CoursesLayout />}>
+              <Route index element={<Courses />} />
+            </Route>
 
-          <Route path="courses/new" element={<NewCourseLayout />}>
-            <Route index element={<NewCourse />} />
+            <Route path="courses/new" element={<NewCourseLayout />}>
+              <Route index element={<NewCourse />} />
+            </Route>
           </Route>
-        </Route>
-      </Routes>
+        </Routes>
+      </Suspense>
     </div>
   );
 }
