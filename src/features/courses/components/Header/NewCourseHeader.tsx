@@ -9,7 +9,7 @@ export default function NewCourseHeader() {
         className={
           isDesktop
             ? "text-4xl font-bold mb-20 text-center"
-            : "text-4xl font-bold mb-15 text-center"
+            : "text-3xl font-bold mb-15 text-center"
         }
       >
         Lisää uusi kurssi

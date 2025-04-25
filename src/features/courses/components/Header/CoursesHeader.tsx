@@ -12,7 +12,7 @@ export default function CoursesHeader() {
         className={
           isDesktop
             ? "text-4xl font-bold mb-20 text-center"
-            : "text-4xl font-bold mb-15 text-center"
+            : "text-3xl font-bold mb-15 text-center"
         }
       >
         Kurssit
