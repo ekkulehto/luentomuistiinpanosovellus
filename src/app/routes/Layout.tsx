@@ -1,10 +1,16 @@
 import { Toaster } from "@/components/ui/sonner";
 import { Outlet } from "react-router";
+// import { useFetchData } from "@/hooks/useFetchData";
+import { useFetchCourses } from "@/features/courses/api/useFetchCourses";
+import { useFetchNotes } from "@/features/notes/api/useFetchNotes";
 import Navigation from "../components/Navigation";
-import { useFetchAllData } from "@/features/notes/hooks/useFetchData";
 
 export default function AppLayout() {
-  useFetchAllData();
+  // tämä netlifya varten
+  // useFetchData();
+
+  useFetchNotes();
+  useFetchCourses();
 
   return (
     <div className="max-w-4xl mx-auto">

@@ -1,5 +1,5 @@
 import { useCourseStore } from "@/features/courses/stores/useCourseStore";
-import { useNoteStore } from "../stores/useNoteStore";
+import { useNoteStore } from "../features/notes/stores/useNoteStore";
 import { useEffect } from "react";
 import useSWR from "swr";
 import axios from "axios";
@@ -8,7 +8,7 @@ import Course from "@/types/Course";
 
 const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
-export function useFetchAllData() {
+export function useFetchData() {
   const setCourses = useCourseStore((state) => state.setCourses);
   const setNotes = useNoteStore((state) => state.setNotes);
   const endpoint = "/.netlify/functions/data";
