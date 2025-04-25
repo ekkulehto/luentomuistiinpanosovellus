@@ -14,7 +14,7 @@ type Props = {
   onDelete: (note: Note) => void;
 };
 
-export default function FullNoteCard({ note, onDelete }: Props) {
+export default function NoteCard({ note, onDelete }: Props) {
   return (
     <div className="mb-5" key={note.id}>
       <Card>

@@ -1,10 +1,10 @@
 import { useMediaQuery } from "@custom-react-hooks/use-media-query";
-import NewCourseForm from "@/features/courses/components/NewCourseForm";
 
-export default function NewCourse() {
+export default function NewCourseHeader() {
   const isDesktop = useMediaQuery("(min-width: 768px)");
+
   return (
-    <div>
+    <>
       <h1
         className={
           isDesktop
@@ -14,9 +14,6 @@ export default function NewCourse() {
       >
         Lisää uusi kurssi
       </h1>
-      <div className="flex justify-center">
-        <NewCourseForm />
-      </div>
-    </div>
+    </>
   );
 }

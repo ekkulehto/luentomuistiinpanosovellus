@@ -4,7 +4,7 @@ type Props = {
   text: string;
 };
 
-export default function TextNoteCard({ text }: Props) {
+export default function SessionCard({ text }: Props) {
   return (
     <div className="mb-5">
       <Card>

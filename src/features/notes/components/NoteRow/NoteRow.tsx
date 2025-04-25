@@ -1,6 +1,6 @@
 import Note from "@/types/Note";
-import TextNoteCard from "./TextNoteCard";
-import FullNoteCard from "./FullNoteCard";
+import SessionCard from "./SessionCard";
+import NoteCard from "./NoteCard";
 
 type Props = {
   note: Note;
@@ -10,8 +10,8 @@ type Props = {
 
 export default function NoteRow({ note, onlyText, onDelete }: Props) {
   return onlyText ? (
-    <TextNoteCard text={note.text} />
+    <SessionCard text={note.text} />
   ) : (
-    <FullNoteCard note={note} onDelete={() => onDelete(note)} />
+    <NoteCard note={note} onDelete={() => onDelete(note)} />
   );
 }

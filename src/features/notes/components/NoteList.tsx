@@ -4,7 +4,7 @@ import { useNoteStore } from "../stores/useNoteStore";
 import filterNotes from "../utils/filterNotes";
 import NoteRow from "./NoteRow/NoteRow";
 import Note from "../../../types/Note";
-import TextNoteCard from "./NoteRow/TextNoteCard";
+import TextNoteCard from "./NoteRow/SessionCard";
 
 type Props = {
   notes: Note[];
