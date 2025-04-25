@@ -1,6 +1,6 @@
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Note from "../../../../types/Note";
+import Note from "@/types/Note";
 import {
   Card,
   CardHeader,

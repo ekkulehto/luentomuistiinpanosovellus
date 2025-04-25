@@ -1,5 +1,5 @@
 import { useCourseStore } from "../stores/useCourseStore";
-import TextNoteCard from "@/features/notes/components/NoteRow/TextNoteCard";
+import TextNoteCard from "@/features/notes/components/NoteRow_temp/TextNoteCard";
 import CourseRow from "./CourseRow";
 
 export default function Courselist() {
