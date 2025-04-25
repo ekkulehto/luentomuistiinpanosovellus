@@ -1,5 +1,10 @@
 import { ChangeEvent, useState } from "react";
+import { useCourseStore } from "../stores/useCourseStore";
+import { GetNextFreeId } from "@/utils/getNextFreeId";
 import { useNavigate } from "react-router";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import {
   Card,
@@ -9,12 +14,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import { useCourseStore } from "../stores/useCourseStore";
-import { GetNextFreeId } from "@/utils/getNextFreeId";
-import Course from "../../../types/Course";
+import Course from "@/types/Course";
 
 export default function NewCourseForm() {
   const [text, setText] = useState("");
@@ -84,7 +84,7 @@ export default function NewCourseForm() {
 
       <CardFooter className="flex justify-between">
         <Button onClick={handleClick}>Lisää</Button>
-        <Button onClick={() => navigate("/courselist")} variant="destructive">
+        <Button onClick={() => navigate("/courses")} variant="destructive">
           Takaisin
         </Button>
       </CardFooter>

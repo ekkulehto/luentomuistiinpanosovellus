@@ -1,20 +1,17 @@
-import { Link } from "react-router";
+import { Alert, AlertTitle } from "@/components/ui/alert";
+import { useCourseStore } from "@/features/courses/stores/useCourseStore";
+import { CourseDropdown } from "@/features/notes/components/CourseDropdown/CourseDropdown";
+import { useMediaQuery } from "@custom-react-hooks/use-media-query";
+import { NotebookPen } from "lucide-react";
 import { useParams } from "react-router";
 import { Button } from "@/components/ui/button";
-import { useCourseStore } from "@/features/courses/stores/useCourseStore";
-import { useNoteStore } from "@/features/notes/stores/useNoteStore";
-import { DropdownMenu } from "@/features/notes/components/CourseDropdown/CourseDropdown";
-import { useMediaQuery } from "@custom-react-hooks/use-media-query";
-import { Alert, AlertTitle } from "@/components/ui/alert";
-import { NotebookPen } from "lucide-react";
+import { Link } from "react-router";
 import { Plus } from "lucide-react";
-import NoteList from "@/features/notes/components/NoteList";
 
-export default function Notes() {
+export default function NoteListHeader() {
   const { courseId } = useParams();
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const courses = useCourseStore((state) => state.courses);
-  const notes = useNoteStore((state) => state.notes);
 
   return (
     <div>
@@ -27,10 +24,10 @@ export default function Notes() {
       </div>
 
       <div className="flex flex-row mb-5 justify-between items-center">
-        <DropdownMenu isNotelist={true} />
+        <CourseDropdown isNotelist={true} />
 
         {courses.length !== 0 && (
-          <Link to={`/notelist/${courseId}/new${location.search}`}>
+          <Link to={`/notes/${courseId}/new${location.search}`}>
             {isDesktop ? (
               <Button>Lisää uusi muistiinpano</Button>
             ) : (
@@ -50,9 +47,6 @@ export default function Notes() {
           </AlertTitle>
         </Alert>
       )}
-      <div>
-        <NoteList notes={notes} onlyText={false} />
-      </div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import Note from "../../../types/Note";
+import Note from "@/types/Note";
 
 export default function filterNotes(notes: Note[], courseId?: string) {
   let filteredNotes: Note[];

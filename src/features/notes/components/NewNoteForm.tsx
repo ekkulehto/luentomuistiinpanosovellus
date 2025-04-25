@@ -1,7 +1,7 @@
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import NoteList from "./NoteList";
 import useNewNoteForm from "../hooks/useNewNoteForm";
+import NoteList from "./NoteList";
 
 export default function NewNoteForm() {
   const {

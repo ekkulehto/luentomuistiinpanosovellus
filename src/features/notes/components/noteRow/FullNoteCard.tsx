@@ -1,3 +1,6 @@
+import { X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Note from "../../../../types/Note";
 import {
   Card,
   CardHeader,
@@ -5,9 +8,6 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
-import { X } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Note from "../../../../types/Note";
 
 type Props = {
   note: Note;

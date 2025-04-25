@@ -1,6 +1,6 @@
+import { useMediaQuery } from "@custom-react-hooks/use-media-query";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router";
-import { useMediaQuery } from "@custom-react-hooks/use-media-query";
 import { Plus } from "lucide-react";
 import Courselist from "@/features/courses/components/CourseList";
 
@@ -13,7 +13,7 @@ export default function Courses() {
       <div className="flex flex-row mb-5 justify-between items-center">
         <div>Kaikki kurssit</div>
 
-        <Link to={"/courselist/new"}>
+        <Link to={"/courses/new"}>
           {isDesktop ? (
             <Button>Lisää uusi kurssi</Button>
           ) : (

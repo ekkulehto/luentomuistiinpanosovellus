@@ -1,11 +1,11 @@
-import { ChangeEvent, useEffect, useState } from "react";
 import { useParams, useSearchParams, useNavigate } from "react-router";
-import { toast } from "sonner";
+import { ChangeEvent, useEffect, useState } from "react";
 import { useCourseDropdownStore } from "../stores/useCourseDropdownStore";
 import { useCourseStore } from "@/features/courses/stores/useCourseStore";
 import { GetNextFreeId } from "@/utils/getNextFreeId";
 import { useNoteStore } from "../stores/useNoteStore";
-import Note from "../../../types/Note";
+import { toast } from "sonner";
+import Note from "@/types/Note";
 
 export default function useNewNoteForm() {
   const [sessionNotes, setSessionNotes] = useState<Note[]>([]);
@@ -33,8 +33,8 @@ export default function useNewNoteForm() {
   const disableNewNote = !isValidCourse();
 
   const navigateToUrl = !isValidCourse()
-    ? "/notelist"
-    : `/notelist/${courseId}?name=${encodeURIComponent(courseName)}`;
+    ? "/notes"
+    : `/notes/${courseId}?name=${encodeURIComponent(courseName)}`;
 
   // komponentin latautuessa asetetaan dropdownmenu näkyviin
   useEffect(() => {

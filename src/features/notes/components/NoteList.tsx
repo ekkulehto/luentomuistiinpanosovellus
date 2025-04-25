@@ -2,7 +2,7 @@ import { useParams } from "react-router";
 import { toast } from "sonner";
 import { useNoteStore } from "../stores/useNoteStore";
 import filterNotes from "../utils/filterNotes";
-import NoteRow from "./noteRow/NoteRow";
+import NoteRow from "./NoteRow/NoteRow";
 import Note from "../../../types/Note";
 import TextNoteCard from "./noteRow/TextNoteCard";
 

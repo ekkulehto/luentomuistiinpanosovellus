@@ -1,7 +1,7 @@
 import * as React from "react";
-import { useEffect } from "react";
 import { useParams, useNavigate, useSearchParams } from "react-router";
 import { useCourseStore } from "@/features/courses/stores/useCourseStore";
+import { useEffect } from "react";
 import Course from "@/types/Course";
 
 type Props = {
@@ -21,11 +21,11 @@ export default function useCourseDropdown({ isNotelist }: Props) {
     const name = course.name;
 
     if (isNotelist && id === courseId) {
-      navigate("/notelist");
+      navigate("/notes");
     } else if (isNotelist) {
-      navigate(`/notelist/${id}?name=${encodeURIComponent(name)}`);
+      navigate(`/notes/${id}?name=${encodeURIComponent(name)}`);
     } else {
-      navigate(`/notelist/${id}/new?name=${encodeURIComponent(name)}`);
+      navigate(`/notes/${id}/new?name=${encodeURIComponent(name)}`);
     }
   };
 

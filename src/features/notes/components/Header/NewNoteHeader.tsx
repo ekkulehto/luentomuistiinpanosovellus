@@ -1,10 +1,9 @@
 import { useParams } from "react-router";
-import { DropdownMenu } from "@/features/notes/components/CourseDropdown/CourseDropdown";
+import { CourseDropdown } from "@/features/notes/components/CourseDropdown/CourseDropdown";
 import { Alert, AlertTitle } from "@/components/ui/alert";
-import NewNoteForm from "@/features/notes/components/NewNoteForm";
 import { NotebookPen } from "lucide-react";
 
-export default function NewNote() {
+export default function NewNoteHeader() {
   const { courseId } = useParams();
 
   return (
@@ -13,7 +12,7 @@ export default function NewNote() {
         Lisää uusi muistiinpano
       </h1>
       <div className="mb-5 flex flex-row justify-between items-center">
-        <DropdownMenu isNotelist={false} />
+        <CourseDropdown isNotelist={false} />
       </div>
       {courseId === "undefined" && (
         <Alert className="mb-5 rounded-none">
@@ -23,9 +22,6 @@ export default function NewNote() {
           </AlertTitle>
         </Alert>
       )}
-      <div>
-        <NewNoteForm />
-      </div>
     </div>
   );
 }

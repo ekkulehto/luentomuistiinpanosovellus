@@ -1,12 +1,11 @@
-import useSWR from "swr";
-import axios from "axios";
-import Note from "../../../types/Note";
 import { useNoteStore } from "../stores/useNoteStore";
 import { useEffect } from "react";
+import useSWR from "swr";
+import Note from "../../../types/Note";
+import axios from "axios";
 
-const fetcher = (url: string) => axios.get(url).then((res) => res.data);
-
-export default function useFetchNotes() {
+export function useFetchNotes() {
+  const fetcher = (url: string) => axios.get(url).then((res) => res.data);
   const setNotes = useNoteStore((state) => state.setNotes);
 
   const {

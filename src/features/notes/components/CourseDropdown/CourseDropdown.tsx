@@ -1,5 +1,3 @@
-"use client";
-
 import { useMediaQuery } from "@custom-react-hooks/use-media-query";
 import { Button } from "@/components/ui/button";
 import {
@@ -23,7 +21,7 @@ type Props = {
   isNotelist: boolean;
 };
 
-export function DropdownMenu({ isNotelist }: Props) {
+export function CourseDropdown({ isNotelist }: Props) {
   // tämä refaktorointi-idea chatgpt:n, mutta oma toteutus
   const dropdownStatus = useCourseDropdownStore((state) => state.isLocked);
   const isDesktop = useMediaQuery("(min-width: 768px)");
@@ -47,7 +45,6 @@ export function DropdownMenu({ isNotelist }: Props) {
           <Button
             variant="outline"
             role="combobox"
-            autoFocus={true}
             aria-expanded={open}
             disabled={!isNotelist ? dropdownStatus : false}
             className={buttonClass}

@@ -1,13 +1,12 @@
-import useSWR from "swr";
-import axios from "axios";
-import Course from "../../../types/Course";
 import { useCourseStore } from "../stores/useCourseStore";
 import { useEffect } from "react";
+import useSWR from "swr";
+import axios from "axios";
+import Course from "@/types/Course";
 
-const fetcher = (url: string) => axios.get(url).then((res) => res.data);
-
-export default function useFetchCourses() {
+export function useFetchCourses() {
   const setCourses = useCourseStore((state) => state.setCourses);
+  const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 
   const {
     data: courses,
