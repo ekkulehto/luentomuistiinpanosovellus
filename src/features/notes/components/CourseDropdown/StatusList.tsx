@@ -9,11 +9,12 @@ import {
   CommandList,
 } from "@/components/ui/command";
 import Course from "@/types/Course";
+
 type Props = {
   setOpen: (open: boolean) => void;
   setValue: React.Dispatch<React.SetStateAction<string>>;
   toggleCourse: (course: Course, courseId?: string) => void;
-  isNotelist: boolean;
+  isNoteList: boolean;
   courseId?: string;
   courses: Course[];
   value: string;
@@ -23,7 +24,7 @@ export default function StatusList({
   setOpen,
   setValue,
   toggleCourse,
-  isNotelist,
+  isNoteList,
   courseId,
   courses,
   value,
@@ -39,7 +40,7 @@ export default function StatusList({
               key={course.id}
               value={course.name}
               onSelect={(currentValue) => {
-                const newValue = !isNotelist
+                const newValue = !isNoteList
                   ? currentValue
                   : currentValue === value
                   ? ""

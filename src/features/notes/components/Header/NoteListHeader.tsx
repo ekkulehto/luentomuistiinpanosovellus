@@ -24,7 +24,7 @@ export default function NoteListHeader() {
       </div>
 
       <div className="flex flex-row mb-5 justify-between items-center">
-        <CourseDropdown isNotelist={true} />
+        <CourseDropdown isNoteList={true} />
 
         {courses.length !== 0 && (
           <Link to={`/notes/${courseId}/new${location.search}`}>

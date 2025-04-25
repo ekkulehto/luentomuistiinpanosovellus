@@ -4,11 +4,7 @@ import { useCourseStore } from "@/features/courses/stores/useCourseStore";
 import { useEffect } from "react";
 import Course from "@/types/Course";
 
-type Props = {
-  isNotelist: boolean;
-};
-
-export default function useCourseDropdown({ isNotelist }: Props) {
+export default function useCourseDropdown(isNoteList: boolean) {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
   const [searchParams] = useSearchParams();
@@ -20,9 +16,9 @@ export default function useCourseDropdown({ isNotelist }: Props) {
     const id = course.id.toString();
     const name = course.name;
 
-    if (isNotelist && id === courseId) {
+    if (isNoteList && id === courseId) {
       navigate("/notes");
-    } else if (isNotelist) {
+    } else if (isNoteList) {
       navigate(`/notes/${id}?name=${encodeURIComponent(name)}`);
     } else {
       navigate(`/notes/${id}/new?name=${encodeURIComponent(name)}`);

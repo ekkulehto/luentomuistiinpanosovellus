@@ -12,7 +12,7 @@ export default function NewNoteHeader() {
         Lisää uusi muistiinpano
       </h1>
       <div className="mb-5 flex flex-row justify-between items-center">
-        <CourseDropdown isNotelist={false} />
+        <CourseDropdown isNoteList={false} />
       </div>
       {courseId === "undefined" && (
         <Alert className="mb-5 rounded-none">
