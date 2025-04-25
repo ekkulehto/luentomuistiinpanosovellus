@@ -1,14 +1,22 @@
+import { useMediaQuery } from "@custom-react-hooks/use-media-query";
 import { useParams } from "react-router";
 import { CourseDropdown } from "@/features/notes/components/CourseDropdown/CourseDropdown";
 import { Alert, AlertTitle } from "@/components/ui/alert";
 import { NotebookPen } from "lucide-react";
 
 export default function NewNoteHeader() {
+  const isDesktop = useMediaQuery("(min-width: 768px)");
   const { courseId } = useParams();
 
   return (
     <div>
-      <h1 className="text-4xl font-bold mb-25 text-center">
+      <h1
+        className={
+          isDesktop
+            ? "text-4xl font-bold mb-20 text-center"
+            : "text-4xl font-bold mb-10 text-center"
+        }
+      >
         Lisää uusi muistiinpano
       </h1>
       <div className="mb-5 flex flex-row justify-between items-center">

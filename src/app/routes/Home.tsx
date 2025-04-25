@@ -1,10 +1,21 @@
+import { useMediaQuery } from "@custom-react-hooks/use-media-query";
 import { Card, CardContent } from "@/components/ui/card";
 import { NotebookPen } from "lucide-react";
 
 export default function Home() {
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+
   return (
     <div>
-      <h1 className="text-4xl font-bold mb-25 text-center">Etusivu</h1>
+      <h1
+        className={
+          isDesktop
+            ? "text-4xl font-bold mb-20 text-center"
+            : "text-4xl font-bold mb-10 text-center"
+        }
+      >
+        Etusivu
+      </h1>
       <div>
         <Card>
           <CardContent>

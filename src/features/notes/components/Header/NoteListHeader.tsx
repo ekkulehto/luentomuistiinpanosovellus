@@ -15,7 +15,13 @@ export default function NoteListHeader() {
 
   return (
     <div>
-      <div className="text-4xl font-bold mb-25 text-center">
+      <div
+        className={
+          isDesktop
+            ? "text-4xl font-bold mb-20 text-center"
+            : "text-4xl font-bold mb-10 text-center"
+        }
+      >
         {courseId === undefined ? (
           <h1>Kaikki muistiinpanot</h1>
         ) : (
