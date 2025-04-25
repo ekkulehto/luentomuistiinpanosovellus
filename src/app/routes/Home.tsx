@@ -11,7 +11,7 @@ export default function Home() {
         className={
           isDesktop
             ? "text-4xl font-bold mb-20 text-center"
-            : "text-4xl font-bold mb-10 text-center"
+            : "text-4xl font-bold mb-15 text-center"
         }
       >
         Etusivu

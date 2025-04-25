@@ -1,4 +1,5 @@
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import { useMediaQuery } from "@custom-react-hooks/use-media-query";
 import { Link } from "react-router";
 import {
   NavigationMenu,
@@ -7,8 +8,16 @@ import {
 } from "@/components/ui/navigation-menu";
 
 export default function Navigation() {
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+
   return (
-    <div className="flex flex-row justify-center mb-20">
+    <div
+      className={
+        isDesktop
+          ? "flex flex-row justify-center mb-20"
+          : "flex flex-row justify-center mb-15"
+      }
+    >
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
