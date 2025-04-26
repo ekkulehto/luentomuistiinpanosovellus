@@ -2,9 +2,11 @@
 
 Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen ja opintojaksojen tehokkaaseen hallintaan.
 
-### 🔗 Demo
+## 🔗 Demo
 
-Kokeile projektin live-versiota [täällä.](https://luentomuistiinpanosovellus.netlify.app/)
+[Kokeile projektin live-versiota täällä.](https://luentomuistiinpanosovellus.netlify.app/)
+
+<br>
 
 ## 🔍 Sovelluksen ominaisuudet
 
@@ -21,17 +23,24 @@ Kokeile projektin live-versiota [täällä.](https://luentomuistiinpanosovellus.
     <tr>
         <td style="text-align:center;">
             <p align="center">
-                <img src="images/home-desktop.png" alt="home-desktop" width="" height="450">
+                <img src="images/home-desktop.png" alt="home-desktop" width="" height="200">
             </p>
         </td>
         <td style="text-align:center;">
             <p align="center">
-                <img src="images/home-mobile.png" alt="home-mobile" width="" height="450">
+                <img src="images/home-mobile.png" alt="home-mobile" width="" height="200">
             </p>
         </td>
     </tr>
+        <tr>
+      <td colspan="2" style="text-align:center;">
+        <em>Klikkaa kuvaa nähdäksesi sen suurempana</em>
+      </td>
+    </tr>
   </table>
 </p>
+
+<br>
 
 ## 📝 Muistiinpanot
 
@@ -52,17 +61,25 @@ Kokeile projektin live-versiota [täällä.](https://luentomuistiinpanosovellus.
     <tr>
         <td style="text-align:center;">
             <p align="center">
-                <img src="images/notes-desktop.png" alt="notes-desktop" width="" height="450">
+                <img src="images/notes-desktop.png" alt="notes-desktop" width="" height="200">
             </p>
         </td>
         <td style="text-align:center;">
             <p align="center">
-                <img src="images/notes-mobile.png" alt="notes-mobile" width="" height="450">
+                <img src="images/notes-mobile.png" alt="notes-mobile" width="" height="200">
             </p>
         </td>
     </tr>
+        <tr>
+      <td colspan="2" style="text-align:center;">
+        <em>Klikkaa kuvaa nähdäksesi sen suurempana</em>
+      </td>
+    </tr>
   </table>
 </p>
+
+<br>
+
 <p align="left">
   <table>
     <tr>
@@ -72,17 +89,24 @@ Kokeile projektin live-versiota [täällä.](https://luentomuistiinpanosovellus.
     <tr>
         <td style="text-align:center;">
             <p align="center">
-                <img src="images/newnote-desktop.png" alt="newnote-desktop" width="" height="450">
+                <img src="images/newnote-desktop.png" alt="newnote-desktop" width="" height="200">
             </p>
         </td>
         <td style="text-align:center;">
             <p align="center">
-                <img src="images/newnote-mobile.png" alt="newnote-mobile" width="" height="450">
+                <img src="images/newnote-mobile.png" alt="newnote-mobile" width="" height="200">
             </p>
         </td>
     </tr>
+        <tr>
+      <td colspan="2" style="text-align:center;">
+        <em>Klikkaa kuvaa nähdäksesi sen suurempana</em>
+      </td>
+    </tr>
   </table>
 </p>
+
+<br>
 
 ## 🎓 Kurssit
 
@@ -101,17 +125,25 @@ Kokeile projektin live-versiota [täällä.](https://luentomuistiinpanosovellus.
     <tr>
         <td style="text-align:center;">
             <p align="center">
-                <img src="images/courses-desktop.png" alt="courses-desktop" width="" height="450">
+                <img src="images/courses-desktop.png" alt="courses-desktop" width="" height="200">
             </p>
         </td>
         <td style="text-align:center;">
             <p align="center">
-                <img src="images/courses-mobile.png" alt="courses-mobile" width="" height="450">
+                <img src="images/courses-mobile.png" alt="courses-mobile" width="" height="200">
             </p>
         </td>
     </tr>
+        <tr>
+      <td colspan="2" style="text-align:center;">
+        <em>Klikkaa kuvaa nähdäksesi sen suurempana</em>
+      </td>
+    </tr>
   </table>
 </p>
+
+<br>
+
 <p align="left">
   <table>
     <tr>
@@ -121,17 +153,24 @@ Kokeile projektin live-versiota [täällä.](https://luentomuistiinpanosovellus.
     <tr>
         <td style="text-align:center;">
             <p align="center">
-                <img src="images/newcourse-desktop.png" alt="newcourse-desktop" width="" height="450">
+                <img src="images/newcourse-desktop.png" alt="newcourse-desktop" width="" height="200">
             </p>
         </td>
         <td style="text-align:center;">
             <p align="center">
-                <img src="images/newcourse-mobile.png" alt="newcourse-mobile" width="" height="450">
+                <img src="images/newcourse-mobile.png" alt="newcourse-mobile" width="" height="200">
             </p>
         </td>
     </tr>
+        <tr>
+      <td colspan="2" style="text-align:center;">
+        <em>Klikkaa kuvaa nähdäksesi sen suurempana</em>
+      </td>
+    </tr>
   </table>
 </p>
+
+<br>
 
 ## 🛠️ Käytetyt teknologiat
 
@@ -145,6 +184,8 @@ Kokeile projektin live-versiota [täällä.](https://luentomuistiinpanosovellus.
 - Zustand (tilanhallinta)
 - Axios (REST API -kutsut)
 
+<br>
+
 ## 🚀 Projektin käyttöönotto
 
 Asenna riippuvuudet ja käynnistä sovellus paikallisesti:
@@ -154,12 +195,16 @@ npm install
 npm run dev
 ```
 
+<br>
+
 ## 🌐 REST API -integraatio
 
 Sovellus hakee datan seuraavista REST API -osoitteista:
 
 - Kurssit: [Courses](https://luentomuistiinpano-api.netlify.app/.netlify/functions/courses)
 - Muistiinpanot: [Notes](https://luentomuistiinpano-api.netlify.app/.netlify/functions/notes)
+
+<br>
 
 ## 🤖 Tekoälyn käyttö
 
@@ -175,11 +220,24 @@ Projektissa hyödynsin ChatGPT (o4-mini-high) -mallia kehityksen apuna erityises
 
 Tekoäly ei toiminut suorana lähteenä koodille, vaan oppimisen tukena, varmistaen dokumentaation avulla aina ratkaisujen oikeellisuuden. Jos jotakin on käytetty tekoälyltä suoraan, niin siitä on maininta commiteissa.
 
+<br>
+
 ## 💡 Omakohtainen kokemus
 
 Tämä projekti opetti minulle valtavasti uutta Reactista ja TypeScriptistä. Vaikka alkuun olikin haasteita syntaksin kanssa, projekti auttoi minua ymmärtämään modernien web-sovellusten rakennetta ja toimintaa syvällisemmin. Erityisesti Shadcn UI ja TypeScript osoittautuivat projektin edetessä aikaa säästäviksi valinnoiksi. Olen erittäin tyytyväinen projektin lopputulokseen ja omaan kehitykseeni ohjelmoijana.
+
+<br>
 
 ## ⚠️ Tiedossa olevat ongelmat
 
 - Desktop-näkymässä dropdown-valikon ajoittainen välähtäminen (uudelleenrenderöinti) kurssia valittaessa. PS. Tähän otan ilomielin ratkaisun vastaan.
 - Mobiilinäkymässä ARIA-virheilmoitus dropdown-valikkoa painaessa (Blocked aria-hidden) joka ei ehkä ole varsinainen virhe ja tapahtuu VAIN selainikkunan kokoa muuttaessa, mitä ei mobiilissa tapahdu.
+
+<br>
+
+## 📋 Todo List
+
+- [ ] Viimeistele README.md
+- [ ] Siisti commitit
+- [ ] Korjaa dropdownin uudelleenrenderöinti
+- [ ] Selvitä onko ARIA-virheilmoitus oikea bugi
