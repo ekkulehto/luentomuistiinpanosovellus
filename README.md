@@ -2,6 +2,10 @@
 
 Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen ja opintojaksojen tehokkaaseen hallintaan.
 
+### 🔗 Demo
+
+Kokeile projektin live-versiota [täällä.](https://luentomuistiinpanosovellus.netlify.app/)
+
 ## 🔍 Sovelluksen ominaisuudet
 
 ### 📖 Etusivu
@@ -162,10 +166,11 @@ Sovellus hakee datan seuraavista REST API -osoitteista:
 Projektissa hyödynsin ChatGPT (o4-mini-high) -mallia kehityksen apuna erityisesti seuraavissa:
 
 - Tässä dokumentaatiossa.
-- TypeScript ja JavaScript syntaksin opettelussa.
+- TypeScript (ja JavaScript) syntaksin opettelussa.
 - React Routerin nested routing -toimintojen selkeyttämisessä.
 - Kansiorakenteen suunnittelussa ja koodin refaktoroinnissa.
 - Ongelmanratkaisussa ja teknisten konseptien selittämisessä.
+- Netlifyn funktioiden konfugroinnissa.
 
 Tekoäly ei toiminut suorana lähteenä koodille, vaan oppimisen tukena, varmistaen dokumentaation avulla aina ratkaisujen oikeellisuuden.
 
