@@ -33,9 +33,9 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
       </td>
     </tr>
     <tr>
-      <td colspan="2" style="text-align:center;">
+      <th colspan="2" style="text-align:center;">
         <em>Klikkaa kuvaa nähdäksesi sen suurempana</em>
-      </td>
+      </th>
     </tr>
   </table>
 </p>
@@ -77,9 +77,9 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
       </td>
     </tr>
     <tr>
-      <td colspan="2" style="text-align:center;">
+      <th colspan="2" style="text-align:center;">
         <em>Klikkaa kuvaa nähdäksesi sen suurempana</em>
-      </td>
+      </th>
     </tr>
   </table>
 </p>
@@ -109,9 +109,9 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
       </td>
     </tr>
     <tr>
-      <td colspan="2" style="text-align:center;">
+      <th colspan="2" style="text-align:center;">
         <em>Klikkaa kuvaa nähdäksesi sen suurempana</em>
-      </td>
+      </th>
     </tr>
   </table>
 </p>
@@ -151,9 +151,9 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
       </td>
     </tr>
         <tr>
-      <td colspan="2" style="text-align:center;">
+      <th colspan="2" style="text-align:center;">
         <em>Klikkaa kuvaa nähdäksesi sen suurempana</em>
-      </td>
+      </th>
     </tr>
   </table>
 </p>
@@ -183,9 +183,9 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
       </td>
     </tr>
     <tr>
-      <td colspan="2" style="text-align:center;">
+      <th colspan="2" style="text-align:center;">
         <em>Klikkaa kuvaa nähdäksesi sen suurempana</em>
-      </td>
+      </th>
     </tr>
   </table>
 </p>
