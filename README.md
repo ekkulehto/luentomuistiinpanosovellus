@@ -1,4 +1,4 @@
-# Luentomuistiinpanosovellus 📚
+# 📚 Luentomuistiinpanosovellus
 
 Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen ja opintojaksojen tehokkaaseen hallintaan.
 
@@ -88,7 +88,7 @@ Kokeile projektin live-versiota [täällä.](https://luentomuistiinpanosovellus.
 
 - Kurssien listaus ja helppo lisäysmahdollisuus.
 
-- Kurssien poisto (HUOM! poistaa myös liitetyt muistiinpanot).
+- Kurssien poisto (huom! poistaa myös liitetyt muistiinpanot).
 
 - Informatiiviset ilmoitukset ja peruutusmahdollisuus lisäyksen yhteydessä.
 
@@ -136,14 +136,14 @@ Kokeile projektin live-versiota [täällä.](https://luentomuistiinpanosovellus.
 ## 🛠️ Käytetyt teknologiat
 
 - Vite
+- SWR
 - React
-- React Router
+- Shadcn UI
 - TypeScript
 - Tailwind CSS
-- Shadcn UI
+- React Router
 - Zustand (tilanhallinta)
 - Axios (REST API -kutsut)
-- SWR
 
 ## 🚀 Projektin käyttöönotto
 
@@ -171,8 +171,9 @@ Projektissa hyödynsin ChatGPT (o4-mini-high) -mallia kehityksen apuna erityises
 - Kansiorakenteen suunnittelussa ja koodin refaktoroinnissa.
 - Ongelmanratkaisussa ja teknisten konseptien selittämisessä.
 - Netlifyn funktioiden konfugroinnissa.
+- Tyylittelyn apuna.
 
-Tekoäly ei toiminut suorana lähteenä koodille, vaan oppimisen tukena, varmistaen dokumentaation avulla aina ratkaisujen oikeellisuuden.
+Tekoäly ei toiminut suorana lähteenä koodille, vaan oppimisen tukena, varmistaen dokumentaation avulla aina ratkaisujen oikeellisuuden. Jos jotakin on käytetty tekoälyltä suoraan, niin siitä on maininta commiteissa.
 
 ## 💡 Omakohtainen kokemus
 
