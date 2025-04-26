@@ -2,23 +2,17 @@
 
 Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen ja opintojaksojen tehokkaaseen hallintaan.
 
-<br>
-
-## 🔗 [Demo](https://luentomuistiinpanosovellus.netlify.app/)
-
-<br>
+🔗 [Demo](https://luentomuistiinpanosovellus.netlify.app/)
 
 ---
 
-<br>
-
 ## 🔍 Sovelluksen ominaisuudet
-
-<br>
 
 ### 📖 Etusivu
 
 - Yksinkertainen tervetulonäkymä, josta on helppo navigoida eri toimintoihin.
+
+<br>
 
 <p align="left">
   <table>
@@ -46,11 +40,7 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
   </table>
 </p>
 
-<br>
-
 ---
-
-<br>
 
 ## 📝 Muistiinpanot
 
@@ -61,6 +51,8 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
 - Poista muistiinpanoja (varmistusviestillä ja peruutusmahdollisuudella).
 
 - Selkeät ilmoitukset, jos muistiinpanoja tai opintojaksoja ei löydy.
+
+<br>
 
 <p align="left">
   <table>
@@ -116,11 +108,7 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
   </table>
 </p>
 
-<br>
-
 ---
-
-<br>
 
 ## 🎓 Kurssit
 
@@ -129,6 +117,8 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
 - Kurssien poisto (huom! poistaa myös liitetyt muistiinpanot).
 
 - Informatiiviset ilmoitukset ja peruutusmahdollisuus lisäyksen yhteydessä.
+
+<br>
 
 <p align="left">
   <table>
@@ -184,11 +174,7 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
   </table>
 </p>
 
-<br>
-
 ---
-
-<br>
 
 ## 🛠️ Käytetyt teknologiat
 
@@ -202,11 +188,7 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
 - Zustand (tilanhallinta)
 - Axios (REST API -kutsut)
 
-<br>
-
 ---
-
-<br>
 
 ## 🚀 Projektin käyttöönotto
 
@@ -217,11 +199,7 @@ npm install
 npm run dev
 ```
 
-<br>
-
 ---
-
-<br>
 
 ## 🌐 REST API -integraatio
 
@@ -230,11 +208,7 @@ Sovellus hakee datan seuraavista REST API -osoitteista:
 - Kurssit: [Courses](https://luentomuistiinpano-api.netlify.app/.netlify/functions/courses)
 - Muistiinpanot: [Notes](https://luentomuistiinpano-api.netlify.app/.netlify/functions/notes)
 
-<br>
-
 ---
-
-<br>
 
 ## 🤖 Tekoälyn käyttö
 
@@ -250,32 +224,20 @@ Projektissa hyödynsin ChatGPT (o4-mini-high) -mallia kehityksen apuna erityises
 
 Tekoäly ei toiminut suorana lähteenä koodille, vaan oppimisen tukena, varmistaen dokumentaation avulla aina ratkaisujen oikeellisuuden. Jos jotakin on käytetty tekoälyltä suoraan, niin siitä on maininta commiteissa.
 
-<br>
-
 ---
-
-<br>
 
 ## 💡 Omakohtainen kokemus
 
 Tämä projekti opetti minulle valtavasti uutta Reactista ja TypeScriptistä. Vaikka alkuun olikin haasteita syntaksin kanssa, projekti auttoi minua ymmärtämään modernien web-sovellusten rakennetta ja toimintaa syvällisemmin. Erityisesti Shadcn UI ja TypeScript osoittautuivat projektin edetessä aikaa säästäviksi valinnoiksi. Olen erittäin tyytyväinen projektin lopputulokseen ja omaan kehitykseeni ohjelmoijana.
 
-<br>
-
 ---
-
-<br>
 
 ## ⚠️ Tiedossa olevat ongelmat
 
 - Desktop-näkymässä dropdown-valikon ajoittainen välähtäminen (uudelleenrenderöinti) kurssia valittaessa. PS. Tähän otan ilomielin ratkaisun vastaan.
 - Mobiilinäkymässä ARIA-virheilmoitus dropdown-valikkoa painaessa (Blocked aria-hidden) joka ei ehkä ole varsinainen virhe ja tapahtuu VAIN selainikkunan kokoa muuttaessa, mitä ei mobiilissa tapahdu.
 
-<br>
-
 ---
-
-<br>
 
 ## 📋 Todo List
 
