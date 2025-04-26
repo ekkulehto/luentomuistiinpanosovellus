@@ -1,6 +1,6 @@
 import { Toaster } from "@/components/ui/sonner";
 import { Outlet } from "react-router";
-// import { useFetchData } from "@/hooks/useFetchData";
+// import { useFetchData } from "@/hooks/useFetchData";npm run
 import { useFetchCourses } from "@/features/courses/api/useFetchCourses";
 import { useFetchNotes } from "@/features/notes/api/useFetchNotes";
 import Navigation from "../components/Navigation";

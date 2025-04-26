@@ -30,7 +30,7 @@ export default function NewCourseForm() {
   const handleClick = () => {
     if (!text.length) {
       toast.error(`Virhe!`, {
-        description: "Et voi tallentaa kurssia ilman nimeä.",
+        description: "Et voi lisätä kurssia ilman nimeä.",
       });
       return;
     }
@@ -44,7 +44,7 @@ export default function NewCourseForm() {
 
     addCourse(newCourse);
 
-    toast.success(`Opintojakso ${text} (id:${id}) lisätty `, {
+    toast.success(`Opintojakso "${text}" (id:${id}) lisätty `, {
       description: `${new Date().toLocaleString()}`,
       action: {
         label: "Peruuta",
