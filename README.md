@@ -165,13 +165,13 @@ Sovellus hakee datan seuraavista REST API -osoitteista:
 
 Projektissa hyödynsin ChatGPT (o4-mini-high) -mallia kehityksen apuna erityisesti seuraavissa:
 
+- Tyylittelyn apuna.
 - Tässä dokumentaatiossa.
+- Netlifyn funktioiden konfugroinnissa.
 - TypeScript (ja JavaScript) syntaksin opettelussa.
-- React Routerin nested routing -toimintojen selkeyttämisessä.
 - Kansiorakenteen suunnittelussa ja koodin refaktoroinnissa.
 - Ongelmanratkaisussa ja teknisten konseptien selittämisessä.
-- Netlifyn funktioiden konfugroinnissa.
-- Tyylittelyn apuna.
+- React Routerin nested routing -toimintojen selkeyttämisessä.
 
 Tekoäly ei toiminut suorana lähteenä koodille, vaan oppimisen tukena, varmistaen dokumentaation avulla aina ratkaisujen oikeellisuuden. Jos jotakin on käytetty tekoälyltä suoraan, niin siitä on maininta commiteissa.
 
