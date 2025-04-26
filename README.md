@@ -21,21 +21,21 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
       <th style="text-align:center;">Mobiili</th>
     </tr>
     <tr>
-      <th style="text-align:center;">
+      <td style="text-align:center; ">
         <p align="center">
-                <img src="images/home-desktop.png" alt="home-desktop" width="" height="100%">
+                <img src="images/home-desktop.png" alt="home-desktop" widtd="" height="100%">
         </p>
-      </th>
-      <th style="text-align:center;">
+      </td>
+      <td style="text-align:center;">
         <p align="center">
-                <img src="images/home-mobile.png" alt="home-mobile" width="" height="100%">
+                <img src="images/home-mobile.png" alt="home-mobile" widtd="" height="100%">
         </p>
-      </th>
+      </td>
     </tr>
     <tr>
-      <th colspan="2" style="text-align:center;">
+      <td colspan="2" style="text-align:center;">
         <em>Klikkaa kuvaa nähdäksesi sen suurempana</em>
-      </th>
+      </td>
     </tr>
   </table>
 </p>
@@ -61,21 +61,25 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
       <th style="text-align:center;">Mobiili</th>
     </tr>
     <tr>
-      <th style="text-align:center;">
+      <td style="text-align:center;">
         <p align="center">
-          <img src="images/notes-desktop.png" alt="notes-desktop" width="" height="100%">
+          <div>
+            <img src="images/notes-desktop.png" alt="notes-desktop" widtd="" height="100%">
+          </div>
         </p>
-      </th>
-      <th style="text-align:center;">
+      </td>
+      <td style="text-align:center;">
         <p align="center">
-          <img src="images/notes-mobile.png" alt="notes-mobile" width="" height="100%">
+          <div>
+            <img src="images/notes-mobile.png" alt="notes-mobile" widtd="" height="100%">
+          </div>
         </p>
-      </th>
+      </td>
     </tr>
     <tr>
-      <th colspan="2" style="text-align:center;">
+      <td colspan="2" style="text-align:center;">
         <em>Klikkaa kuvaa nähdäksesi sen suurempana</em>
-      </th>
+      </td>
     </tr>
   </table>
 </p>
@@ -89,21 +93,25 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
       <th style="text-align:center;">Mobiili</th>
     </tr>
     <tr>
-      <th style="text-align:center;">
+      <td style="text-align:center;">
         <p align="center">
-          <img src="images/newnote-desktop.png" alt="newnote-desktop" width="" height="100%">
+          <div>
+            <img src="images/newnote-desktop.png" alt="newnote-desktop" widtd="" height="100%">
+          </div>
         </p>
-      </th>
-      <th style="text-align:center;">
+      </td>
+      <td style="text-align:center;">
         <p align="center">
-          <img src="images/newnote-mobile.png" alt="newnote-mobile" width="" height="100%">
+          <div>
+            <img src="images/newnote-mobile.png" alt="newnote-mobile" widtd="" height="100%">
+          </div>
         </p>
-      </th>
+      </td>
     </tr>
     <tr>
-      <th colspan="2" style="text-align:center;">
+      <td colspan="2" style="text-align:center;">
         <em>Klikkaa kuvaa nähdäksesi sen suurempana</em>
-      </th>
+      </td>
     </tr>
   </table>
 </p>
@@ -127,21 +135,25 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
       <th style="text-align:center;">Mobiili</th>
     </tr>
     <tr>
-      <th style="text-align:center;">
+      <td style="text-align:center;">
         <p align="center">
-          <img src="images/courses-desktop.png" alt="courses-desktop" width="" height="100%">
+          <div>
+            <img src="images/courses-desktop.png" alt="courses-desktop" widtd="" height="100%">
+          </div>
         </p>
-      </th>
-      <th style="text-align:center;">
+      </td>
+      <td style="text-align:center;">
         <p align="center">
-          <img src="images/courses-mobile.png" alt="courses-mobile" width="" height="100%">
+          <div>
+            <img src="images/courses-mobile.png" alt="courses-mobile" widtd="" height="100%">
+          </div>
         </p>
-      </th>
+      </td>
     </tr>
         <tr>
-      <th colspan="2" style="text-align:center;">
+      <td colspan="2" style="text-align:center;">
         <em>Klikkaa kuvaa nähdäksesi sen suurempana</em>
-      </th>
+      </td>
     </tr>
   </table>
 </p>
@@ -155,21 +167,25 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
       <th style="text-align:center;">Mobiili</th>
     </tr>
     <tr>
-      <th style="text-align:center;">
+      <td style="text-align:center;">
         <p align="center">
-          <img src="images/newcourse-desktop.png" alt="newcourse-desktop" width="" height="100%">
+          <div>
+            <img src="images/newcourse-desktop.png" alt="newcourse-desktop" widtd="" height="100%">
+          </div>
         </p>
-      </th>
-      <th style="text-align:center;">
+      </td>
+      <td style="text-align:center;">
         <p align="center">
-          <img src="images/newcourse-mobile.png" alt="newcourse-mobile" width="" height="100%">
+          <div>
+            <img src="images/newcourse-mobile.png" alt="newcourse-mobile" widtd="" height="100%">
+          </div>
         </p>
-      </th>
+      </td>
     </tr>
     <tr>
-      <th colspan="2" style="text-align:center;">
+      <td colspan="2" style="text-align:center;">
         <em>Klikkaa kuvaa nähdäksesi sen suurempana</em>
-      </th>
+      </td>
     </tr>
   </table>
 </p>
