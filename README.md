@@ -17,12 +17,12 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
     <tr>
         <td style="text-align:center;">
             <p align="center">
-                <img src="images/home-desktop.png" alt="home-desktop" width="" height="500">
+                <img src="images/home-desktop.png" alt="home-desktop" width="" height="900">
             </p>
         </td>
         <td style="text-align:center;">
             <p align="center">
-                <img src="images/home-mobile.png" alt="home-mobile" width="" height="500">
+                <img src="images/home-mobile.png" alt="home-mobile" width="" height="900">
             </p>
         </td>
     </tr>
@@ -48,12 +48,12 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
     <tr>
         <td style="text-align:center;">
             <p align="center">
-                <img src="images/notes-desktop.png" alt="notes-desktop" width="" height="500">
+                <img src="images/notes-desktop.png" alt="notes-desktop" width="" height="900">
             </p>
         </td>
         <td style="text-align:center;">
             <p align="center">
-                <img src="images/notes-mobile.png" alt="notes-mobile" width="" height="500">
+                <img src="images/notes-mobile.png" alt="notes-mobile" width="" height="900">
             </p>
         </td>
     </tr>
@@ -68,12 +68,12 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
     <tr>
         <td style="text-align:center;">
             <p align="center">
-                <img src="images/newnote-desktop.png" alt="newnote-desktop" width="" height="500">
+                <img src="images/newnote-desktop.png" alt="newnote-desktop" width="" height="900">
             </p>
         </td>
         <td style="text-align:center;">
             <p align="center">
-                <img src="images/newnote-mobile.png" alt="newnote-mobile" width="" height="500">
+                <img src="images/newnote-mobile.png" alt="newnote-mobile" width="" height="900">
             </p>
         </td>
     </tr>
@@ -97,12 +97,12 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
     <tr>
         <td style="text-align:center;">
             <p align="center">
-                <img src="images/courses-desktop.png" alt="courses-desktop" width="" height="500">
+                <img src="images/courses-desktop.png" alt="courses-desktop" width="" height="900">
             </p>
         </td>
         <td style="text-align:center;">
             <p align="center">
-                <img src="images/courses-mobile.png" alt="courses-mobile" width="" height="500">
+                <img src="images/courses-mobile.png" alt="courses-mobile" width="" height="900">
             </p>
         </td>
     </tr>
@@ -117,12 +117,12 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
     <tr>
         <td style="text-align:center;">
             <p align="center">
-                <img src="images/newcourse-desktop.png" alt="newcourse-desktop" width="" height="500">
+                <img src="images/newcourse-desktop.png" alt="newcourse-desktop" width="" height="900">
             </p>
         </td>
         <td style="text-align:center;">
             <p align="center">
-                <img src="images/newcourse-mobile.png" alt="newcourse-mobile" width="" height="500">
+                <img src="images/newcourse-mobile.png" alt="newcourse-mobile" width="" height="900">
             </p>
         </td>
     </tr>
