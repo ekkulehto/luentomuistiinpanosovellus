@@ -1,6 +1,6 @@
 import axios from "axios";
 
-exports.handler = async function (event) {
+export async function handler(event) {
   if (event.httpMethod === "OPTIONS") {
     return {
       statusCode: 204,
@@ -40,4 +40,4 @@ exports.handler = async function (event) {
       body: JSON.stringify({ error: err.toString() }),
     };
   }
-};
+}
