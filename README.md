@@ -45,11 +45,8 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
 ## 📝 Muistiinpanot
 
 - Tarkastele kaikkia tai yksittäisen opintojakson muistiinpanoja.
-
 - Lisää muistiinpanoja valitulle kurssille.
-
 - Poista muistiinpanoja (varmistusviestillä ja peruutusmahdollisuudella).
-
 - Selkeät ilmoitukset, jos muistiinpanoja tai opintojaksoja ei löydy.
 
 <br>
@@ -121,9 +118,7 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
 ## 🎓 Kurssit
 
 - Kurssien listaus ja helppo lisäysmahdollisuus.
-
 - Kurssien poisto (huom! poistaa myös liitetyt muistiinpanot).
-
 - Informatiiviset ilmoitukset ja peruutusmahdollisuus lisäyksen yhteydessä.
 
 <br>
