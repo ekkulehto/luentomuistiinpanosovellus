@@ -199,8 +199,8 @@ Opiskelijoille suunnattu moderni ja selkeä web-sovellus luentomuistiinpanojen j
 - React
 - Shadcn UI
 - TypeScript
-- Tailwind CSS
 - React Router
+- Tailwind CSS
 - Zustand (tilanhallinta)
 - Axios (REST API -kutsut)
 
@@ -231,12 +231,12 @@ Sovellus hakee datan seuraavista REST API -osoitteista:
 Projektissa hyödynsin ChatGPT (o4-mini-high) -mallia kehityksen apuna erityisesti seuraavissa:
 
 - Tyylittelyn apuna.
-- Tässä dokumentaatiossa.
-- Netlifyn funktioiden konfugroinnissa.
+- Tässä dokumentaatiossa (kieliasussa).
 - TypeScript (ja JavaScript) syntaksin opettelussa.
 - Kansiorakenteen suunnittelussa ja koodin refaktoroinnissa.
-- Ongelmanratkaisussa ja teknisten konseptien selittämisessä.
 - React Routerin nested routing -toimintojen selkeyttämisessä.
+- Ongelmanratkaisussa ja teknisten konseptien selittämisessä.
+- Netlifyn funktioiden konfugroinnissa (eivät käytössä tässä versiossa).
 
 Tekoäly ei toiminut suorana lähteenä koodille, vaan oppimisen tukena, varmistaen dokumentaation avulla aina ratkaisujen oikeellisuuden. Jos jotakin on käytetty tekoälyltä suoraan, niin siitä on maininta commiteissa.
 
@@ -244,7 +244,7 @@ Tekoäly ei toiminut suorana lähteenä koodille, vaan oppimisen tukena, varmist
 
 ## 💡 Omakohtainen kokemus
 
-Tämä projekti opetti minulle valtavasti uutta Reactista ja TypeScriptistä. Vaikka alkuun olikin haasteita syntaksin kanssa, projekti auttoi minua ymmärtämään modernien web-sovellusten rakennetta ja toimintaa syvällisemmin. Erityisesti Shadcn UI ja TypeScript osoittautuivat projektin edetessä aikaa säästäviksi valinnoiksi. Olen erittäin tyytyväinen projektin lopputulokseen ja omaan kehitykseeni ohjelmoijana.
+Tämä projekti opetti minulle valtavasti uutta Reactista ja TypeScriptistä. Vaikka alkuun olikin haasteita syntaksin kanssa, projekti auttoi minua ymmärtämään modernien web-sovellusten rakennetta ja toimintaa syvällisemmin. Erityisesti Shadcn UI ja TypeScript osoittautuivat projektin edetessä aikaa säästäviksi valinnoiksi. Olen erittäin tyytyväinen projektin lopputulokseen ja omaan kehitykseeni ohjelmoijana. Ainoastaan gitin laiskat "add all" -commitit ja niiden osittain huonot kuvaukset jäivät vähän harmittamaan.
 
 ---
 
@@ -257,7 +257,6 @@ Tämä projekti opetti minulle valtavasti uutta Reactista ja TypeScriptistä. Va
 
 ## 📋 Todo List
 
-- [ ] Viimeistele README.md
-- [ ] Siisti commitit
+- [x] Viimeistele README.md
 - [ ] Korjaa dropdownin uudelleenrenderöinti
 - [ ] Selvitä onko ARIA-virheilmoitus oikea bugi
