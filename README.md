@@ -229,8 +229,8 @@ Projektissa hyödynsin ChatGPT (o4-mini-high) -mallia kehityksen apuna erityises
 - Tässä dokumentaatiossa (kieliasussa).
 - TypeScript (ja JavaScript) syntaksin opettelussa.
 - Kansiorakenteen suunnittelussa ja koodin refaktoroinnissa.
-- React Routerin nested routing -toimintojen selkeyttämisessä.
 - Ongelmanratkaisussa ja teknisten konseptien selittämisessä.
+- React Routerin nested routing -toimintojen selkeyttämisessä.
 - Netlifyn funktioiden konfugroinnissa (eivät käytössä tässä versiossa).
 
 Tekoäly ei toiminut suorana lähteenä koodille, vaan oppimisen tukena, varmistaen dokumentaation avulla aina ratkaisujen oikeellisuuden. Jos tekoälyltä saatua koodia on käytetty suoraan, niin siitä on maininta commiteissa.
@@ -252,7 +252,7 @@ Olen erittäin tyytyväinen projektin lopputulokseen ja omaan kehitykseeni ohjel
 
 ---
 
-## 📋 Todo List
+## 📋 Tehtävälista
 
 - [x] Viimeistele README.md
 - [ ] Korjaa dropdownin uudelleenrenderöinti
