@@ -233,13 +233,15 @@ Projektissa hyödynsin ChatGPT (o4-mini-high) -mallia kehityksen apuna erityises
 - Ongelmanratkaisussa ja teknisten konseptien selittämisessä.
 - Netlifyn funktioiden konfugroinnissa (eivät käytössä tässä versiossa).
 
-Tekoäly ei toiminut suorana lähteenä koodille, vaan oppimisen tukena, varmistaen dokumentaation avulla aina ratkaisujen oikeellisuuden. Jos jotakin on käytetty tekoälyltä suoraan, niin siitä on maininta commiteissa.
+Tekoäly ei toiminut suorana lähteenä koodille, vaan oppimisen tukena, varmistaen dokumentaation avulla aina ratkaisujen oikeellisuuden. Jos tekoälyltä saatua koodia on käytetty suoraan, niin siitä on maininta commiteissa.
 
 ---
 
 ## 💡 Omakohtainen kokemus
 
-Tämä projekti opetti minulle valtavasti uutta Reactista ja TypeScriptistä. Vaikka alkuun olikin haasteita syntaksin kanssa, projekti auttoi minua ymmärtämään modernien web-sovellusten rakennetta ja toimintaa syvällisemmin. Erityisesti Shadcn UI ja TypeScript osoittautuivat projektin edetessä aikaa säästäviksi valinnoiksi. Olen erittäin tyytyväinen projektin lopputulokseen ja omaan kehitykseeni ohjelmoijana. Ainoastaan gitin laiskat "add all" -commitit ja niiden osittain huonot kuvaukset jäivät vähän harmittamaan.
+Tämä projekti opetti minulle valtavasti uutta Reactista ja TypeScriptistä. Vaikka alkuun olikin haasteita syntaksin kanssa, projekti auttoi minua ymmärtämään modernien web-sovellusten rakennetta ja toimintaa syvällisemmin. Erityisesti Shadcn UI ja TypeScript osoittautuivat projektin edetessä aikaa säästäviksi valinnoiksi.
+
+Olen erittäin tyytyväinen projektin lopputulokseen ja omaan kehitykseeni ohjelmoijana. Ainoastaan gitin laiskat "add all" -commitit ja niiden osittain huonot kuvaukset jäivät vähän harmittamaan.
 
 ---
 
