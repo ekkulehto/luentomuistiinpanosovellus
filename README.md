@@ -255,5 +255,7 @@ Olen erittäin tyytyväinen projektin lopputulokseen ja omaan kehitykseeni ohjel
 ## 📋 Tehtävälista
 
 - [x] Viimeistele README.md
+- [ ] Yhdistä API-kutsut yhdeksi kutsuksi
 - [ ] Korjaa dropdownin uudelleenrenderöinti
 - [ ] Selvitä onko ARIA-virheilmoitus oikea bugi
+- [ ] Korjaa yllä oleva jos se paljastuu bugiksi
