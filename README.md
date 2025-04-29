@@ -248,6 +248,7 @@ Olen erittäin tyytyväinen projektin lopputulokseen ja omaan kehitykseeni ohjel
 ## ⚠️ Tiedossa olevat ongelmat
 
 - Desktop-näkymässä dropdown-valikon ajoittainen välähtäminen (uudelleenrenderöinti) kurssia valittaessa. PS. Tähän otan ilomielin ratkaisun vastaan.
+- Dropdownissa valitun kurssin background ei muutu, vaan pysyy ensimmäisessä kurssissa.
 - Mobiilinäkymässä ARIA-virheilmoitus dropdown-valikkoa painaessa (Blocked aria-hidden) joka ei ehkä ole varsinainen virhe ja tapahtuu VAIN selainikkunan kokoa muuttaessa, mitä ei mobiilissa tapahdu.
 
 ---
@@ -256,6 +257,7 @@ Olen erittäin tyytyväinen projektin lopputulokseen ja omaan kehitykseeni ohjel
 
 - [x] Viimeistele README.md
 - [ ] Yhdistä API-kutsut yhdeksi kutsuksi
+- [ ] Korjaa dropdownin background-bugi
 - [ ] Korjaa dropdownin uudelleenrenderöinti
 - [ ] Selvitä onko ARIA-virheilmoitus oikea bugi
 - [ ] Korjaa yllä oleva jos se paljastuu bugiksi
